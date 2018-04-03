@@ -20,7 +20,7 @@ var app = angular.module("cryptoCentric", ["ngRoute"])
             controller: "RegCtrl"
         }).
         when("/login", {
-            templateUrl: "Views/login.html",
+            templateUrl: "views/login.html",
             controller: "LoginCtrl"
         }).
         when("/forgotpassword", {
