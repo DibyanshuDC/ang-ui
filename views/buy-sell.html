@@ -1,0 +1,570 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div class='myaccount trade'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="alert s alert-success alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Success</strong> order created successfully.
+                    </div>
+                    <div class="alert f alert-warning alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Error</strong> order was not created.
+                    </div>
+                    <div class="alert b alert-warning alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Insufficient Funds</strong> order was not created.
+                    </div>
+                    <div class="alert l alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Over Daily Limit</strong> cannot create deposit.
+                    </div>
+                    <div class="page-header">
+                        <a class='pull-right btn btn-sm btn-default toggle_chart' href='#'>Show charts</a>
+                        <h1 class='pophelp text-capital'>{{action}} {{coin.name}}</h1>
+                        <a href='#!/do/{{altAction}}/{{coin.id}}' class="text-capital">{{altAction}} {{coin.name}}</a>
+                    </div>
+                </div>
+                <div class='col-md-12 chartarea'>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                            <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                            <div id="container" style="margin-top:20px;height: 400px; min-width: 310px"></div>
+                            <br>
+                            <br>
+                            <hr>
+                            <script>
+                                $(function() {
+                                    Highcharts.theme = {
+                                        colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+                                        chart: {
+                                            backgroundColor: null
+                                        },
+                                        title: {
+                                            style: {
+                                                color: 'black',
+                                                fontSize: '16px',
+                                                fontWeight: 'bold'
+                                            }
+                                        },
+                                        subtitle: {
+                                            style: {
+                                                color: 'black'
+                                            }
+                                        },
+                                        tooltip: {
+                                            borderWidth: 0
+                                        },
+                                        legend: {
+                                            itemStyle: {
+                                                fontWeight: 'bold',
+                                                fontSize: '13px'
+                                            }
+                                        },
+                                        xAxis: {
+                                            labels: {
+                                                style: {
+                                                    color: '#6e6e70'
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            labels: {
+                                                style: {
+                                                    color: '#6e6e70'
+                                                }
+                                            }
+                                        },
+                                        plotOptions: {
+                                            series: {
+                                                shadow: true
+                                            },
+                                            candlestick: {
+                                                lineColor: '#404048'
+                                            },
+                                            map: {
+                                                shadow: false
+                                            }
+                                        },
+
+                                        // Highstock specific
+                                        navigator: {
+                                            xAxis: {
+                                                gridLineColor: '#D0D0D8'
+                                            }
+                                        },
+                                        rangeSelector: {
+                                            buttonTheme: {
+                                                fill: 'white',
+                                                stroke: '#C0C0C8',
+                                                'stroke-width': 1,
+                                                states: {
+                                                    select: {
+                                                        fill: '#D0D0D8'
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        scrollbar: {
+                                            trackBorderColor: '#C0C0C8'
+                                        },
+
+                                        // General
+                                        background2: '#E0E0E8'
+
+                                    };
+
+                                    // Apply the theme
+                                    Highcharts.setOptions(Highcharts.theme);
+
+                                    Highcharts.setOptions({
+                                        global: {
+                                            useUTC: false
+                                        }
+                                    });
+
+                                    var url = 'https://s3-ap-southeast-2.amazonaws.com/price-history2/' + coinname + '.json';
+                                    $.getJSON(url, function(data) {
+                                        Highcharts.stockChart('container', {
+                                            rangeSelector: {
+                                                buttons: [{
+                                                        type: 'hour',
+                                                        count: 1,
+                                                        text: '1h'
+                                                    }, {
+                                                        type: 'hour',
+                                                        count: 6,
+                                                        text: '6h'
+                                                    }, {
+                                                        type: 'day',
+                                                        count: 1,
+                                                        text: '1d'
+                                                    },
+                                                    {
+                                                        type: 'day',
+                                                        count: 3,
+                                                        text: '3d'
+                                                    }, {
+                                                        type: 'day',
+                                                        count: 7,
+                                                        text: '7d'
+                                                    }, {
+                                                        type: 'month',
+                                                        count: 1,
+                                                        text: '1m'
+                                                    }, {
+                                                        type: 'month',
+                                                        count: 3,
+                                                        text: '3m'
+                                                    }, {
+                                                        type: 'all',
+                                                        text: 'All'
+                                                    }
+                                                ],
+                                                selected: 1
+                                            },
+
+                                            title: {
+                                                text: coinfullname + ' Chart'
+                                            },
+
+                                            series: [{
+                                                name: coinname,
+                                                data: data,
+                                                tooltip: {
+                                                    valueDecimals: 6
+                                                }
+                                            }]
+                                        });
+                                    });
+                                })
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-12'>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class='col-md-12' align="center">
+                                <br><br><br>
+                                <h1 style='font-size:46px'>1 {{coin.symbol}} = ${{coin.price}}</h1>
+                                <br>
+                            </div>
+                            <div class='row'>
+                                <br><br><br><br>
+                                <div class='col-md-3 col-md-offset-2'>
+                                    <div class='form-group'>
+                                        How much <span>{{coin.name}}</span>?
+                                        <input style='font-size:23px;height:45px' type='number' ng-change="coinAmountChange()" ng-model="coinAmount" autocomplete='off' class="buy buyinput form-control" name="amount" id="buyamount" required tabindex="1">
+                                    </div>
+                                </div>
+                                <div class='col-md-2' align='center' style='line-height:80px'>
+                                    or
+                                </div>
+                                <div class='col-md-3'>
+                                    <div class='form-group'>
+                                        How much AUD? <small>(includes fee)</small>
+                                        <input style='font-size:23px;height:45px' type='number' autocomplete='off' class="buy buyinput form-control" ng-model="tradeAmount" ng-change="tradeAmountChange()"  id="audbuyamount" required tabindex="2">
+                                    </div>
+                                </div>
+                                <div class='col-md-8 col-md-offset-2'>
+                                    <br>
+                                    <span class="cancelbtcbtn btn btn-default btn-sm">Cancel</span>
+                                    <button class="btcbtn pull-right btn btn-lg btn-primary text-capital" tabindex="3">{{action}}</button>
+                                </div>
+                            </div>
+                            <div class="container-fluid " style="background:#94DFF6;margin-top:100px;padding:50px;color:#111">
+                                <div class="col-md-12" align="center">
+                                    <h1>{{coin.name}} in Minutes!</h1>
+                                </div>
+                                <div class="col-md-10 col-md-offset-1" style="margin-top:20px;font-size:18px" align="center">
+                                    <span class="text-capital">{{action }}</span>{{ coin.name}} on cryptocentric and we immediately send the coins to your wallet so you get your coins fast.
+                                </div>
+                            </div>
+                            <div class='row' style='margin-top:100px'>
+                                <div class='col-md-3 col-md-offset-1'>
+                                    <img class='hidden-sm hidden-xs' src='img/{{coin.name}}.png' />
+                                </div>
+                                <div class='col-md-7'>
+                                    <div class="col-md-12" style="margin-top:30px;font-size:18px">
+                                        <h3>Why {{coin.name}}?</h3>
+                                        <p style="margin:20px 0px">
+                                        </p>
+                                        <p>
+                                            {{coin.name}} uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12" style="margin-top:50px;font-size:18px">
+                                        <h3>How to buy {{coin.name}}</h3>
+                                        <p>
+                                            Using the form above enter the amount of Bitcoin you want to buy or the amount of Australian dollars you want to spend and click on 'Buy Now' to complete the payment.
+                                        </p>
+                                        <p>
+                                            The payment is easily completed online in minutes by POLi Payments a business from Australia Post and after payment is complete the coins will be sent to your cryptocentric online wallet immediately.
+                                        </p>
+                                        <p>
+                                            If you don't have your own wallet you can sign up for a free account using the 'Register' button at the top of the page to create a free online Bitcoin wallet. You can withdraw your Bitcoin from the online wallet at any time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmBuy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Buy Bitcoin</h4>
+                    </div>
+                    <div class="modal-body">
+                        Start buying {{coin.name}} by registering for a free cryptocentric account.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <a href='/register.html' type="button" class="btn btn-primary">Register an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="accountBuy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Buy Bitcoin</h4>
+                    </div>
+                    <div class="modal-body">
+                        To buy {{coin.name}} please get your account verified.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <a href='/my/settings/verification' type="button" class="btn btn-primary">Verify account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lowBalance" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Buy Bitcoin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong>You don't have enough credit available in your account.</strong>
+                        <br><br> You will need to use POLi instant payment, BPAY or Cash Deposits to credit your account before buying any coins.<br><br> POLi, BPAY and Cash deposits are available <a href="/my/deposit">here</a>.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="poliDisabled" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Buy Bitcoin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong>We have temporarily disabled POLi AUD deposits.</strong>
+                        <br><br> You will need to use BPAY or Cash Deposits to deposit funds into your account before buying any coins.<br> BPAY and Cash deposits are available <a href="/my/deposit">here</a>.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="accountLimit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Account over daily limit</h4>
+                    </div>
+                    <div class="modal-body">
+                        We are unable to process the order because it would go over your daily limit.<br><br>
+                        <a href='#' onclick='window.open("https://cryptocentric.zendesk.com/hc/en-us/articles/115005378707-How-do-I-get-my-deposit-limit-raised-");return false;'>How to increase your deposit limit</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="tooHighLimit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Buy order limit</h4>
+                    </div>
+                    <div class="modal-body">
+                        We aren't able to process individual buy orders above $20,000.<br><br> To put through a larger value you will need to do multiple orders as long as it is within your daily limit.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .movedown {
+                color: red;
+            }
+
+            .moveup {
+                color: green;
+            }
+
+            .page-content {
+                background: #fff;
+                padding: 0px;
+            }
+
+            .chartarea {
+                display: none
+            }
+
+        </style>
+        <script>
+            var msg = window.location.hash.substr(1);
+            var type = '';
+
+            if (msg) {
+                $('.' + msg).show();
+                window.location.hash = '';
+            }
+
+            $('.alert-news').show();
+
+            $('.toggle_chart').click(function() {
+                $('.chartarea').toggle();
+            })
+
+            if (getParameterByName('chart')) {
+                $('.toggle_chart').show();
+            }
+
+            var marketRate = 12113.01;
+            var marketPrecision = 2;
+            var displayRate = 11875.50;
+            var coinname = 'BTC';
+            var coinfullname = 'Bitcoin';
+            var poliredirecturl = '';
+
+            $('#audbuyamount').change(function() {
+                var aud = $('#audbuyamount').val();
+                var amount = Math.floor((aud / marketRate) * 100000000) / 100000000;
+
+                $('#buyamount').val(amount.toFixed(8));
+            });
+
+            $('#buyamount').change(function() {
+                var aud = $('#buyamount').val();
+                var amount = Math.ceil((aud * marketRate) * 100) / 100;
+
+                $('#audbuyamount').val(amount.toFixed(2));
+            });
+
+            $('.cancelbtcbtn').click(function() {
+                location.href = '/';
+            })
+
+            $('.btcbtn').click(function() {
+                type = 'btc';
+
+                var amount = $('#buyamount').val();
+                showmodal(amount);
+            });
+
+            var isCurrentlyBuying = false;
+            $('.confirmbuy').click(function() {
+                if (isCurrentlyBuying) return;
+                isCurrentlyBuying = true;
+                $('.confirmbuy').text('Processing...');
+
+                var amount = $('#buyamount').val();
+                var paymenttype = $("input:radio[name ='paymenttype']:checked").val();
+
+                var data = {
+                    _csrf: "RdvDMIDn-JzpaEt9k5OFwaYNHABX-g33CCuw",
+                    cointype: "BTC",
+                    rate: "12113.01",
+                    buytype: "quickbuy",
+                    paymenttype: paymenttype,
+                    amount: amount
+                }
+
+                $.ajax({
+                        method: "POST",
+                        url: "/my/instantbuy",
+                        data: data
+                    })
+                    .done(function(msg) {
+                        if (!msg.success) {
+                            isCurrentlyBuying = false;
+                            $('.confirmbuy').text('Confirm Buy');
+
+                            if (msg.err == 'balance') {
+                                $('#lowBalance').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+
+                            if (msg.err == 'account') {
+                                $('#accountBuy').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+
+                            if (msg.err == 'polidisabled') {
+                                $('#poliDisabled').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+
+                            if (msg.err == 'limit') {
+                                $('#accountLimit').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+
+                            if (msg.err == 'high') {
+                                $('#tooHighLimit').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+
+                            if (msg.err == 'low') {
+                                $('#tooHighLimit').modal('show');
+                                $('#confirmBuy').modal('hide');
+                            }
+                        } else {
+                            try {
+                                ga('send', 'event', {
+                                    eventCategory: 'instantbuy',
+                                    eventAction: 'buy',
+                                    eventLabel: data.cointype,
+                                    eventValue: parseInt(data.amount * data.rate)
+                                });
+                            } catch (e) {}
+
+                            location.href = '/my/buycomplete/' + msg.buyorderid;
+                        }
+                    });
+            });
+
+            $('.policonfirmbuy').click(function() {
+                var bank = $('.bankdropdown').val();
+
+                var url = poliredirecturl + '&bank=' + bank;
+                $.ajax({
+                        method: "GET",
+                        url: url
+                    })
+                    .done(function(msg) {
+                        if (msg.success) {
+                            location.href = msg.redirect;
+                        }
+                    });
+            })
+
+            function showPaymentOptions(redirect) {
+                $('#confirmBuy').modal('hide');
+                $('#selectBankModal').modal('show');
+
+                poliredirecturl = redirect;
+            }
+
+            function showmodal(amount) {
+                $('#confirmBuy').modal('show');
+
+                var displayFee = 11875.50;
+
+                var total = marketRate * amount;
+                var fee = Math.ceil((total - (displayRate * amount)) * 10000) / 10000;
+
+                var feepercent = ((1 - 1.02) * -1).toFixed(2) * 100;
+
+                var displayrate = (Math.ceil(displayRate * 1000000) / 1000000).toFixed(marketPrecision);
+                var displayamount = (Math.floor(amount * 100000000) / 100000000).toFixed(8);
+                var displaytotal = (Math.ceil(total * 100) / 100).toFixed(2);
+                if (fee < 0.01) {
+                    var displayfee = fee.toFixed(4);
+                } else {
+                    var displayfee = fee.toFixed(2);
+                }
+
+                $('.confirmamount').html(displayamount);
+                $('.confirmrate').html(displayrate);
+                $('.confirmprice').html(displaytotal);
+                $('.fee').html(displayfee);
+                $('.feepercent').html(feepercent);
+
+            }
+
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+        </script>
+    </div>
+</div>

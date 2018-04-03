@@ -1,0 +1,67 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div id='register' class='container'>
+            <div class="page-header">
+                <h1>
+                    Create a cryptocentric Account
+                    <br>
+                    <small>Join thousands trading Bitcoin on cryptocentric</small>
+                </h1>
+            </div>
+            <div class='row createaccountrow'>
+                <div class='col-md-6'>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <form class='form-validate'>
+                                <div class='form-group'>
+                                    <label>Email</label>
+                                    <input type='email' class='form-control email' name='email' ng-model="username" required>
+                                </div>
+                                <div class='form-group'>
+                                    <label>Password</label>
+                                    <input type='password' ng-model="password" class='form-control' id='password' name='password' autocomplete="off" required>
+                                    <p class="help-block">Minimum 8 characters including 1 or more uppercase, lowercase, and numbers.</p>
+                                </div>
+                                <div class='form-group'>
+                                    <label>Re-type Password</label>
+                                    <input type='password' ng-model="password2" class='form-control' name='password2' autocomplete="off" required>
+                                </div>
+                                <br>
+                                <div class='form-group'>
+                                    <label>Contact</label>
+                                    <input class='form-control' name='referredby' required ng-model="contact">
+                                    <p class="help-block">We will verify it.</p>
+                                </div>
+                                <script src='https://www.google.com/recaptcha/api.js'></script>
+                                <div class="g-recaptcha" data-sitekey=""></div>
+                                <br>
+                                <button ng-click="register()" class='btn btn-primary'>Create Account</button>
+                                <br>
+                                <small>By creating an account you are agreeing to cryptocentrics <a target='_blank' href='/terms'>terms and conditions</a></small>
+                                <br><br>
+                                <a style='padding-top:15px' href='#!login'>Already have an account? Login</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-12'>
+                    <div ng-class="success ? 'alert alert-success' : ''">{{success}}</div>
+                </div>
+            </div>
+            <style>
+                .page-content {
+                    background: #fff;
+                    padding: 0px;
+                }
+
+            </style>
+        </div>
+    </div>

@@ -1,0 +1,123 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div class='myaccount'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="page-header">
+                        <h1>Buy/Sell Coins</h1>
+                    </div>
+                </div>
+                <div class='col-md-12' style='margin:40px 0px'>
+                    <div class='panel'>
+                        <div class='panel-body'>
+                            <div class='col-xs-4' align='center'>
+                                <h3>Simple</h3>
+                                <img src='img/tradeaud.png' style='max-width:90%' />
+                                <br>
+                                <span class='hidden-xs'>Trade direct for AUD.</span>
+                            </div>
+                            <div class='col-xs-4' align='center'>
+                                <h3>Safe</h3>
+                                <img src='img/freebtc.png' style='max-width:90%' />
+                                <br>
+                                <span class='hidden-xs'>All Coins and funds kept in escrow.</span>
+                            </div>
+                            <div class='col-xs-4' align='center'>
+                                <h3>Fast</h3>
+                                <img src='img/lowcostbtc.png' style='max-width:90%' />
+                                <br>
+                                <span class='hidden-xs'>Immediate AUD deposits.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-12' style='margin-top:20px'>
+                    <div class='row'>
+                        <div class='col-md-3 col-xs-6'>
+                            <div class='form-group form-inline'>
+                                <input type='text' class='form-control filtercoins' ng-model = "filtercoins" placeholder="Filter list" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-12'>
+                    <ul class='listgroup'>
+                        <li class="list-group-item hidden-xs hidden-sm listtitle">
+                            <div class='row'>
+                                <div class="col-sm-2"><b>Coin</b></div>
+                                <div class="col-sm-2"><b>Buy Rate</b></div>
+                                <div class="col-sm-2"><b>Sell Rate</b></div>
+                                <div class="col-sm-2"><b>Market Cap</b></div>
+                                <div class="col-sm-1"><b>Change</b><small> (24hrs)</small></div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs visible-sm listtitle">
+                            <div class='row'>
+                                <div class="col-xs-3"><b>Coin</b></div>
+                                <div class="col-xs-3"><b>Buy</b></div>
+                                <div class="col-xs-3"><b>Sell</b></div>
+                                <div class="col-xs-3"><b>Change</b></div>
+                            </div>
+                        </li>
+                    <span  ng-repeat="coin in coins | filter: filtercoins |orderBy : 'rank'" >
+                        <li class="hidden-xs hidden-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
+                            <div ng-href="#!/do/buy/{{coin.symbol}}" class='row marketrow'>
+                                <div class="col-sm-2"><img src='img/{{coin.name}}.png' style='height:37px' />{{coin.name}}</div>
+                                <div class="col-sm-2">${{coin.price}}</div>
+                                <div class="col-sm-2">${{coin.price }}</div>
+                                <div class="col-sm-2">${{coin.marketCap}}</div>
+                                <div class="col-sm-1"><span ng-class="coin.percentageChange < 0 ? 'movedown' : 'moveup'">{{coin.percentageChange}}%</span></div>
+                                <div class="col-sm-3">
+                                    <a ng-href="#!/do/buy/{{coin.id}}" class='btn btn-default btn-sm'>Buy {{coin.symbol}}</a>&nbsp;&nbsp;
+                                    <a ng-href="#!/do/sell/{{coin.id}}" class='btn btn-default btn-sm'>Sell {{coin.symbol}}</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="visible-xs visible-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
+                            <div class='row'>
+                                <div class="col-xs-3" style='line-height:40px'><img src='img/{{coin.name}}.png' style='height:27px' /></div>
+                                <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
+                                <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
+                                <div class="col-xs-3" style='line-height:40px'><span ng-class="coin.percentageChange < 0 ? 'movedown' : 'moveup'">{{coin.percentageChange}}%</span></div>
+                                <div class='col-xs-3'>
+                                    BTC
+                                </div>
+                                <div class='col-xs-9'>
+                                    <div>
+                                        <a ng-href="#!/do/buy/{{coin.id}}" class='btn btn-default btn-sm'> Buy </a>&nbsp;
+                                        <a ng-href='#!/do/sell/{{coin.id}}' class='btn btn-default btn-sm'> Sell </a>&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <style>
+            .movedown {
+                color: red;
+            }
+
+            .moveup {
+                color: green;
+            }
+
+            .page-content {
+                background: #f3f3f3;
+                padding: 0px;
+            }
+
+        </style>
+    </div>
+</div>

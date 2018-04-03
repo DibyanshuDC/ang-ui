@@ -1,0 +1,13 @@
+.text-capital{
+    text-transform: capitalize;
+}
+
+.navbar-default{
+    background-color: #34deff;
+    border-color: #000;
+}
+.home-main-tagline {
+    margin-top: 0;
+    background: #00b5ec;
+    color: #fff;
+}

@@ -1,0 +1,333 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div class='myaccount wallet container'>
+            <div class='row walletbg wallet-PIVX'>
+                <div class='col-md-12'>
+                    <div class="page-header">
+                        <h1>PIVX Wallet<br></h1>
+                    </div>
+                    <div class="alert f alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Insufficient Funds</strong> You don't have enough coins available.
+                    </div>
+                    <div class="alert fn alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Invalid Amount</strong> The amount to send must be greater than zero.
+                    </div>
+                    <div class="alert ft alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Invalid Token</strong> The two factor code entered was incorrect.
+                    </div>
+                    <div class="alert wl alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Over Daily Limit</strong> Can not withdraw / send coins.
+                    </div>
+                    <div class="alert a alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Invalid Address</strong> please check carefully and try again. Coins sent to the wrong address cannot be recovered.
+                    </div>
+                    <div class="alert aw alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Warning</strong> You need to send a minimum of PIVX
+                    </div>
+                    <div class="alert s alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Sending</strong> Your coins are being sent.
+                    </div>
+                    <div class="alert sc alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Cancelled</strong> The send has been cancelled.
+                    </div>
+                    <div class="alert ants alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Invalid Amount</strong> PIVX only support sending whole numbers. Please remove any decimals and send again.
+                    </div>
+                    <div class="alert sub alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Invalid Amount</strong> PIVX only support sending multiples of 0.01
+                    </div>
+                    <div class="alert bterror alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Unable to send</strong> We are currently unable to send to this address. Please send your coins to a personal wallet first.
+                    </div>
+                    <div class="alert unknown alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Error</strong> We were unable to process your withdrawal please try again.
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    PIVX Wallet Details
+                                </div>
+                                <div class="panel-body">
+                                    <div style='margin-bottom:40px'>
+                                        <a href='/sell/pivx' class='btn btn-default pull-right visible-lg' style='width:75px'>Sell</a>
+                                        <a href='/buy/pivx' class='btn btn-default pull-right visible-lg' style='width:75px; margin-right: 10px;'>Buy</a>
+                                        <h1 style='margin-bottom:0px;padding-bottom:0px'>0 PIVX</h1>
+                                        0 (available)
+                                        <div class='hidden-lg' style='margin-top:10px'>
+                                            <a href='/buy/pivx' class='btn btn-sm btn-default' style='width:75px; margin-right: 10px;'>Buy</a>
+                                            <a href='/sell/pivx' class='btn btn-sm btn-default' style='width:75px'>Sell</a>
+                                        </div>
+                                    </div>
+                                    <div class='small'>
+                                        We provide a managed wallet for PIVX which you can send coins to anyone at anytime. We don't currently allow sending PIVX into cryptocentric.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    Send PIVX
+                                </div>
+                                <div class="panel-body">
+                                    <div>
+                                        <input type='hidden' name='_csrf' value='C4T2AzSK-4H1dnQDjHU04FY5gVeua0g_jkM4' />
+                                        <input type='hidden' name='coin' value='PIVX' />
+                                        <div class="form-group">
+                                            <label style='margin-bottom:-15px'>Amount</label>
+                                            <br>(<small>Minimum withdrawal value is $3 AUD</small>)
+                                            <div class="input-group" style='margin-top:10px'>
+                                                <input class="form-control" name="amount" id='amount' required />
+                                                <span class="input-group-addon">PIVX</span>
+                                            </div>
+                                            Transaction fee: -0.02000000
+                                        </div>
+                                        <div class="form-group">
+                                            <label style='margin-bottom:-15px'>PIVX Payment Address</label>
+                                            <br>
+                                            <input style='margin-top:10px' class="form-control" name="address" id='address' required />
+                                            <span class='small'></span>
+                                            <div class='scanspace'></div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <button class='btn btn-default btnsend'>Send</button>
+                                    <small><a target="_blank" href="https://cryptocentric.zendesk.com/hc/en-us/articles/115005547308-How-long-does-a-coin-or-token-withdrawal-take-" class="pull-right">Withdrawal timeframes</a></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="confirmToken" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Confirm Send</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <br> Please check your email and click the verify link to complete the withdrawal.
+                                        <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-12'>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    Transactions (Last 300)
+                                </div>
+                                <div class='panel-body'>
+                                    <div class="table-responsive">
+                                        <table class='table table-condensed'>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Type</th>
+                                                <th>Amount</th>
+                                                <th>Address</th>
+                                                <th>Status</th>
+                                                <th>Txid</th>
+                                                <th></th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="qrcodemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">PIVX QR code</h4>
+                        </div>
+                        <div class="modal-body" align='center'>
+                            <div id='qrcode'></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="/public/js/html5-qrcode.min.js"></script>
+            <script>
+                $('.smstoken').click(function() {
+                    $.post('/my/smstoken', {
+                        _csrf: 'C4T2AzSK-4H1dnQDjHU04FY5gVeua0g_jkM4'
+                    });
+
+                    $('.smstokencontainer').show();
+
+                    $('.smstoken').text('Resend code');
+                });
+
+                $(function() {
+                    var sending = false;
+                    var fee = 0.02;
+
+                    var msg = window.location.hash.substr(1);
+                    if (msg) {
+                        if (msg == 'sn') {
+                            $('#confirmToken').modal('show');
+                        }
+
+                        $('.' + msg).show();
+                        window.location.hash = '';
+                    }
+
+                    new QRCode(document.getElementById("qrcode"), {
+                        text: "",
+                        width: 256,
+                        height: 256,
+                        colorDark: "#000000",
+                        colorLight: "#ffffff",
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+
+                    $('.txidtoggle').click(function() {
+                        $(this).parent().parent().next().find('.txiddetail').toggle();
+                    });
+
+                    $('.btncancel').click(function() {
+                        var id = $(this).data('id');
+                        var coin = 'PIVX';
+                        var csrf = 'C4T2AzSK-4H1dnQDjHU04FY5gVeua0g_jkM4';
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/my/withdraw/cancel',
+                            data: {
+                                coin: coin,
+                                id: id,
+                                '_csrf': csrf
+                            },
+                            dataType: 'JSON'
+                        }).done(function(data, status, xhr) {
+                            if (data.status == 's') {
+                                var href = document.location.href.replace('#', '');
+                                document.location.href = href + '#sc';
+                                document.location.reload();
+                            }
+                        }).fail(function(data, status, xhr) {
+                            var href = document.location.href.replace('#', '');
+                            document.location.href = href + '#aw';
+                            document.location.reload();
+                        });
+                    });
+
+                    $('.btnsend').click(function() {
+                        if (sending) return;
+
+                        sending = true;
+
+                        $('.btnsend').html('Sending...');
+
+                        var amount = $('#amount').val();
+                        var address = $('#address').val().trim();
+                        var coin = 'PIVX';
+                        var csrf = 'C4T2AzSK-4H1dnQDjHU04FY5gVeua0g_jkM4';
+                        var token = $('#twofatoken').val();
+
+
+                        amount = Math.round((parseFloat(amount) + fee) * 100000000) / 100000000;
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/my/withdraw?json=true',
+                            data: {
+                                coin: coin,
+                                amount: amount,
+                                address: address,
+                                token: token,
+                                '_csrf': csrf
+                            },
+                            dataType: 'JSON'
+                        }).done(function(data, status, xhr) {
+                            if (data.status == 's') {
+                                var href = document.location.href.replace('#', '');
+                                document.location.href = href + '#sn';
+                                document.location.reload();
+                            } else if (data.status == 'snc') {
+                                var href = document.location.href.replace('#', '');
+                                document.location.href = href + '#s';
+                                document.location.reload();
+                            } else {
+                                var href = document.location.href.replace('#', '');
+                                document.location.href = href + '#' + data.status;
+                                document.location.reload();
+                            }
+                        }).fail(function(data, status, xhr) {
+                            var href = document.location.href.replace('#', '');
+                            document.location.href = href + '#f';
+                            document.location.reload();
+                        });
+                    });
+                });
+
+                $('.ICOnews').click((e) => {
+                    e.preventDefault();
+                    $('.ICOnews.more').toggleClass('hide')
+                    $('.ICOnews.less').toggleClass('hide')
+                    $('.alert-news').toggleClass('show');
+                })
+
+                $(function() {
+                    $('.alert-always').show();
+                });
+
+            </script>
+        </div>
+        <style>
+            .smstokencontainer {
+                color: red;
+                display: none;
+            }
+
+            .page-content {
+                background: #fff;
+                padding: 0px;
+            }
+
+            .trun {
+                width: 400px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .trun50 {
+                width: 50px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        </style>
+    </div>
+</div>

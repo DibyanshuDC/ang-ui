@@ -1,0 +1,707 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div class='myaccount trade container'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="alert s alert-success alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Success</strong> order created successfully.
+                    </div>
+                    <div class="alert f alert-warning alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Error</strong> order was not created.
+                    </div>
+                    <div class="alert b alert-warning alert-dismissable" style='margin-top:10px'>
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>Insufficient Funds</strong> order was not created.
+                    </div>
+                    <div class='col-md-12 help'>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                Help
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <h4>How to sell &amp; buy {{coin.name}}</h4>
+                                    cryptocentric is a secure trading platform where you sell and buy Bitcoin in Australia giving you complete control over how much you are willing to pay or accept for your {{coin.name}}, putting you in the drivers seat to maximise your profits. The exchange is a 100% safe way to buy &amp; sell {{coin.name}} as all the coins and funds are kept in escrow by cryptocentric until a trade is completed or cancelled.
+                                    <br><br> You have a few options when buying &amp; selling {{coin.name}} on cryptocentric. First option which is usually the easiest and quickest (though not the cheapest) way to make a trade is a <b>Market Order</b>. The price for a market order is already pre filled in the forms below so all you have to do is enter the amount of {{coin.name}} you want to buy or sell and click the Buy or Sell button. There is a very high chance that at least part of your order will be filled immediately when submitting a market order.
+                                    <br><br> The next option for buying &amp; selling Bitcoin is a <b>Limit Order</b>. With a limit order you can buy or sell or certain amount of Bitcoin at a given price or better. To submit a limit order you can change the price per Bitcoin to anything you like in the form below and click the Buy or Sell button, after you click the button the limit order will be submitted and your order will be open until either a trade occurs or you cancel the order. In order for a trade to occur you will need another individual to place a corresponding buy or sell order at your given price. This means that if you might be waiting a while or indefinitely for a trade to occur if you set the price too high or too low.
+                                    <br><br> If you need any further help in placing your order please <a href="/contact" data-uv-trigger="contact" data-uv-scanned="true" id="uv-1">Contact us</a>
+                                    <br><br>
+                                    <h4>FAQ</h4>
+                                    <b>What happens when I click the "Buy" or "Sell" button?</b><br> First thing after you click the button you will be prompted to confirm the details of your order. If you accept the confirmation you are commiting to place the order and either buy or sell the coins and an open order will be placed which may be fulfilled at any time by another individual on cryptocentric.
+                                    <br><br>
+                                    <b>Can I cancel an order?</b><br> You can cancel at any time, assuming that it has not already been traded. To cancel an order click on "orders" at the top of the screen, find the order in the list and click "cancel".
+                                    <br><br>
+                                    <b>How long does it take to get my coins?</b><br> The time is takes to get your coins depends on the price of the order and the volume of trades. If there is a high trade volume or you match the price of any open orders it is likely your trade will go through immediately. If however there are big movements in price or the volume is low it can take some time, potentially indefinitely and you will have to cancel your order and place it again at a different price.<br> To have a very high chance of getting the coins you want immediately you can use the "Prefill Buy" and "Prefill Sell" buttons next to the open orders. Using these buttons will prefill the buy or sell form at a rate which is almost certain to process immediately.
+                                    <br><br>
+                                    <b>What is "Prefill buy" and "Prefill sell"?</b><br> You can click on the "Prefill buy" or "Prefill sell" link next to any open order and it will prefill the buy or sell form at the matching price and ammount to one of the open orders.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            {{coin.name}} Price Chart
+                        </div>
+                        <div class="panel-body">
+                            <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                            <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                            <div id="container" style="margin-top:20px;height: 400px; min-width: 310px"></div>
+                            <br>
+                            <br>
+                            <hr>
+                            <script>
+                                $(function() {
+                                    Highcharts.theme = {
+                                        colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+                                        chart: {
+                                            backgroundColor: null
+                                        },
+                                        title: {
+                                            style: {
+                                                color: 'black',
+                                                fontSize: '16px',
+                                                fontWeight: 'bold'
+                                            }
+                                        },
+                                        subtitle: {
+                                            style: {
+                                                color: 'black'
+                                            }
+                                        },
+                                        tooltip: {
+                                            borderWidth: 0
+                                        },
+                                        legend: {
+                                            itemStyle: {
+                                                fontWeight: 'bold',
+                                                fontSize: '13px'
+                                            }
+                                        },
+                                        xAxis: {
+                                            labels: {
+                                                style: {
+                                                    color: '#6e6e70'
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            labels: {
+                                                style: {
+                                                    color: '#6e6e70'
+                                                }
+                                            }
+                                        },
+                                        plotOptions: {
+                                            series: {
+                                                shadow: true
+                                            },
+                                            candlestick: {
+                                                lineColor: '#404048'
+                                            },
+                                            map: {
+                                                shadow: false
+                                            }
+                                        },
+
+                                        // Highstock specific
+                                        navigator: {
+                                            xAxis: {
+                                                gridLineColor: '#D0D0D8'
+                                            }
+                                        },
+                                        rangeSelector: {
+                                            buttonTheme: {
+                                                fill: 'white',
+                                                stroke: '#C0C0C8',
+                                                'stroke-width': 1,
+                                                states: {
+                                                    select: {
+                                                        fill: '#D0D0D8'
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        scrollbar: {
+                                            trackBorderColor: '#C0C0C8'
+                                        },
+
+                                        // General
+                                        background2: '#E0E0E8'
+
+                                    };
+
+                                    // Apply the theme
+                                    Highcharts.setOptions(Highcharts.theme);
+
+                                    Highcharts.setOptions({
+                                        global: {
+                                            useUTC: false
+                                        }
+                                    });
+
+                                    var url = 'https://s3-ap-southeast-2.amazonaws.com/price-history2/' + coinname + '.json';
+                                    $.getJSON(url, function(data) {
+                                        Highcharts.stockChart('container', {
+                                            rangeSelector: {
+                                                buttons: [{
+                                                        type: 'hour',
+                                                        count: 1,
+                                                        text: '1h'
+                                                    }, {
+                                                        type: 'hour',
+                                                        count: 6,
+                                                        text: '6h'
+                                                    }, {
+                                                        type: 'day',
+                                                        count: 1,
+                                                        text: '1d'
+                                                    },
+                                                    {
+                                                        type: 'day',
+                                                        count: 3,
+                                                        text: '3d'
+                                                    }, {
+                                                        type: 'day',
+                                                        count: 7,
+                                                        text: '7d'
+                                                    }, {
+                                                        type: 'month',
+                                                        count: 1,
+                                                        text: '1m'
+                                                    }, {
+                                                        type: 'month',
+                                                        count: 3,
+                                                        text: '3m'
+                                                    }, {
+                                                        type: 'all',
+                                                        text: 'All'
+                                                    }
+                                                ],
+                                                selected: 1
+                                            },
+
+                                            title: {
+                                                text: coinfullname + ' Chart'
+                                            },
+
+                                            series: [{
+                                                name: coinname,
+                                                data: data,
+                                                tooltip: {
+                                                    valueDecimals: 6
+                                                }
+                                            }]
+                                        });
+                                    });
+                                })
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="panel">
+                <div class="panel-heading">
+                    {{coin.name}} Trading Stats
+                </div>
+                <div class="panel-body">
+                    <div class='row'>
+                        <div class="col-sm-4">Last<br><b>$11888.00</b></div>
+                        <div class="col-sm-4">Bid<br><b>$11600.00</b></div>
+                        <div class="col-sm-4">Ask<br><b>$11948.98</b></div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div id='buy' class="panel">
+                        <div class="panel-heading">
+                            Buy {{coin.symbol}}
+                        </div>
+                        <div class="buypanel panel-body">
+                            <form id='buyform' class='buyform-validate' action='/my/buy' method='POST' role="form">
+                                <input type='hidden' name='_csrf' value='TREWPYjq-Xe7gE_gW9ZpIXGByj9uddLLpUcU' />
+                                <input type='hidden' name='cointype' value='{{coin.symbol}}' />
+                                <div class='form-group'>
+                                </div>
+                                <div style='margin-bottom:10px'>
+                                    <label>
+<input type="radio" name="buytype" id="coin" value="coin" checked>
+{{coin.symbol}}
+</label> &nbsp;&nbsp;
+                                    <label>
+<input type="radio" name="buytype" id="aud" value="aud">
+AUD
+</label>
+                                </div>
+                                <div class='form-group buycoin'>
+                                    <label>I would like to buy:</label>
+                                    <div class="input-group">
+                                        <input type='number' step='0.00000001' autocomplete='off' class="buy buyinput form-control" name="amount" id="buyamount" required  ng-model="buyAmnt">
+                                        <span class="input-group-addon">{{coin.symbol}}</span>
+                                    </div>
+                                </div>
+                                <div class='form-group buyaud'>
+                                    <label>I would like to buy (AUD worth):</label>
+                                    <div class="input-group">
+                                        <input type='number' step='0.01' autocomplete='off' class="buy buyaudinput form-control" name="buyaudamount" id="buyaudamount" required>
+                                        <span class="input-group-addon">AUD</span>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label>When the price per {{coin.name}} is:</label>
+                                    <div class="input-group">
+                                        <input type='number' step='0.000001' autocomplete='off' class="buy buyinput form-control" name="rate" id="buyrate" required value='{{coin.price}}'>
+                                        <span class="input-group-addon">AUD</span>
+                                    </div>
+                                </div>
+                                <p class="help-block">Running total: <span>${{coin.price * buyAmnt | currency:''}}</span> AUD</p>
+                                <button class='btn btn-primary buybutton' data-toggle="modal" data-type='buy' data-target="#confirmBuy">Buy {{coin.symbol}}</button>
+                                <a class='pull-right btn btn-default' href="/pegorder/btc">Create Pegged Order</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-6'>
+                    <div id='sell' class="panel">
+                        <div class="panel-heading">
+                            Sell {{coin.symbol}}
+                        </div>
+                        <div class="sellpanel panel-body">
+                            <form id='sellform' class='sellform-validate' action='/my/sell' method='POST' role="form">
+                                <input type='hidden' name='_csrf' value='TREWPYjq-Xe7gE_gW9ZpIXGByj9uddLLpUcU' />
+                                <input type='hidden' name='cointype' value='BTC' />
+                                <div class='form-group'>
+                                </div>
+                                <div class="form-group">
+                                    <label>I would like to sell:</label>
+                                    <div class="input-group">
+                                        <input type='number' step='0.00000001' autocomplete='off' class="buy sellinput form-control" name="amount" id="sellamount" required ng-model="sellAmnt" >
+                                        <span class="input-group-addon">{{coin.symbol}}</span>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label>When the price per {{coin.name}} is:</label>
+                                    <div class="input-group">
+                                        <input  type='number' step='0.000001' autocomplete='off' class="buy sellinput form-control" name="rate" id="sellrate" required value='{{coin.price}}'>
+                                        <span class="input-group-addon">AUD</span>
+                                    </div>
+                                </div>
+                                <p class="help-block">Running total: <span id='calcsellprice'>${{coin.price * sellAmnt | currency:''}}</span> AUD</p>
+                                <button class='btn btn-primary sellbutton' data-toggle="modal" data-type='sell' data-target="#confirmSell">Sell {{coin.symbol}}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class="panel">
+                        <div class="panel-heading pophelp">
+                            Open Buy Orders <a class='pull-right' href='trade-open/buy-btc.html'>See all</a>
+                        </div>
+                        <div class='panel-body'>
+                            <div class="table-responsive">
+                                <table class="openbuytable table table-bordered table-condensed">
+                                    <tr>
+                                        <th>Amount</th>
+                                        <th>Rate</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.00430999 BTC</td>
+                                        <td>$11600.00</td>
+                                        <td>$50.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.000881 BTC</td>
+                                        <td>$11350.00</td>
+                                        <td>$10.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.000442 BTC</td>
+                                        <td>$11300.00</td>
+                                        <td>$5.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.001879 BTC</td>
+                                        <td>$11300.00</td>
+                                        <td>$21.24</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.003559 BTC</td>
+                                        <td>$11250.00</td>
+                                        <td>$40.04</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.001785 BTC</td>
+                                        <td>$11200.00</td>
+                                        <td>$20.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.18 BTC</td>
+                                        <td>$11200.00</td>
+                                        <td>$2016.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.85002538 BTC</td>
+                                        <td>$11150.00</td>
+                                        <td>$9477.78</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.00306 BTC</td>
+                                        <td>$11100.00</td>
+                                        <td>$33.97</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.0001 BTC</td>
+                                        <td>$11020.00</td>
+                                        <td>$1.10</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.0001 BTC</td>
+                                        <td>$11020.00</td>
+                                        <td>$1.10</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.0004 BTC</td>
+                                        <td>$11000.00</td>
+                                        <td>$4.41</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.00909 BTC</td>
+                                        <td>$11000.00</td>
+                                        <td>$99.99</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.856513 BTC</td>
+                                        <td>$10900.00</td>
+                                        <td>$9336.00</td>
+                                    </tr>
+                                    <tr class='openbuyrows'>
+                                        <td>0.01799999 BTC</td>
+                                        <td>$10890.00</td>
+                                        <td>$196.02</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-6'>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Open Sell Orders <a class='pull-right' href='trade-open/sell/btc'>See all</a>
+                        </div>
+                        <div class='panel-body'>
+                            <div class="table-responsive">
+                                <table class="openselltable table table-bordered table-condensed">
+                                    <tr>
+                                        <th>Amount</th>
+                                        <th>Rate</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.2 BTC</td>
+                                        <td>$11948.98</td>
+                                        <td>$2389.80</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.665244 BTC</td>
+                                        <td>$11949.00</td>
+                                        <td>$7949.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.00044199 BTC</td>
+                                        <td>$11950.00</td>
+                                        <td>$5.28</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>1 BTC</td>
+                                        <td>$11999.00</td>
+                                        <td>$11999.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.00532762 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$63.93</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.001 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$12.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.001 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$12.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.13970273 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$1676.43</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.01 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$120.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.6 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$7200.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.25 BTC</td>
+                                        <td>$12000.00</td>
+                                        <td>$3000.00</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.033588 BTC</td>
+                                        <td>$12020.00</td>
+                                        <td>$403.73</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.005 BTC</td>
+                                        <td>$12086.00</td>
+                                        <td>$60.43</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.5 BTC</td>
+                                        <td>$12111.00</td>
+                                        <td>$6055.50</td>
+                                    </tr>
+                                    <tr class='opensellrows'>
+                                        <td>0.435 BTC</td>
+                                        <td>$12135.00</td>
+                                        <td>$5278.73</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Recently Completed Orders
+                        </div>
+                        <div class='panel-body'>
+                            <div class="table-responsive">
+                                <table class='table  table-bordered table-condensed'>
+                                    <tr>
+                                        <th>Sale Date</th>
+                                        <th>Amount</th>
+                                        <th>Rate</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:17 AM</td>
+                                        <td>0.02762133 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$328.36</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:17 AM</td>
+                                        <td>0.08580012 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$1019.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:16 AM</td>
+                                        <td>0.08580012 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$1019.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:16 AM</td>
+                                        <td>0.000841 BTC</td>
+                                        <td>$11889.00</td>
+                                        <td>$10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:16 AM</td>
+                                        <td>0.02263976 BTC</td>
+                                        <td>$11904.00</td>
+                                        <td>$269.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 03:01 AM</td>
+                                        <td>0.167378 BTC</td>
+                                        <td>$11949.00</td>
+                                        <td>$2000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 01:59 AM</td>
+                                        <td>0.167378 BTC</td>
+                                        <td>$11949.00</td>
+                                        <td>$2000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/03/2018 01:12 AM</td>
+                                        <td>0.00004124 BTC</td>
+                                        <td>$11904.00</td>
+                                        <td>$0.49</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 11:18 PM</td>
+                                        <td>0.23825608 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$2832.39</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 11:17 PM</td>
+                                        <td>0.40370635 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$4799.26</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 11:11 PM</td>
+                                        <td>0.002525 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$30.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 10:46 PM</td>
+                                        <td>0.045 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$534.60</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 08:48 PM</td>
+                                        <td>0.02040465 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$242.41</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 08:39 PM</td>
+                                        <td>0.1 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$1188.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 08:18 PM</td>
+                                        <td>0.000081 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$0.97</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 08:13 PM</td>
+                                        <td>0.00180357 BTC</td>
+                                        <td>$11879.98</td>
+                                        <td>$21.43</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 07:01 PM</td>
+                                        <td>0.00841699 BTC</td>
+                                        <td>$11879.98</td>
+                                        <td>$100.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 04:52 PM</td>
+                                        <td>0.311448 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$3700.01</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 04:47 PM</td>
+                                        <td>0.016835 BTC</td>
+                                        <td>$11880.00</td>
+                                        <td>$200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/03/2018 04:42 PM</td>
+                                        <td>0.1 BTC</td>
+                                        <td>$11888.00</td>
+                                        <td>$1188.80</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="confirmBuy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Buy/Sell Bitcoin (BTC)</h4>
+                        </div>
+                        <div class="modal-body">
+                            Start buying Bitcoin by registering for a free cryptocentric account.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a href='/register' type="button" class="btn btn-primary">Register an account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="confirmSell" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Buy/Sell Bitcoin (BTC)</h4>
+                        </div>
+                        <div class="modal-body">
+                            Start selling Bitcoin today by registering for a free cryptocentric account. Registration is super simple and only takes a few seconds to complete.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a href='/register' type="button" class="btn btn-primary">Register an account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <style>
+                .buyaud {
+                    display: none;
+                }
+
+                #toast-container>div {
+                    width: 300px;
+                }
+
+                .toast-success {
+                    background-color: #3c763d;
+                }
+
+                .movedown {
+                    color: red;
+                }
+
+                .moveup {
+                    color: green;
+                }
+
+                .page-content {
+                    background: #fff;
+                    padding: 0px;
+                }
+
+            </style>
+        </div>
+    </div>
+</div>

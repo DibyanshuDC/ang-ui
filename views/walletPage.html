@@ -1,0 +1,1723 @@
+<div class='page-content'>
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='pull-right pophelpshow'>
+                    <a class='btn btn-sm btn-info showhelp' href='#'>Help</a>
+                    <a class='btn btn-sm btn-info hidehelp' href='#'>Hide</a>
+                </div>
+            </div>
+        </div>
+        <div class='myaccount dashboard container wallets'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="page-header">
+                        <h1>Wallets</h1>
+                        <p>Approximate wallet value: <b>$0 AUD</b></p>
+                    </div>
+                </div>
+                <div class='col-md-12' style='margin-top:10px'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <div class='form-group form-inline pull-left' style='margin-right:20px'>
+                                <input type='text' class='form-control filtercoins' placeholder="Filter list" />
+                            </div>
+                            <div class='form-group form-inline'>
+                                Hide zero balance
+                                <input type="checkbox" class='hidezero' style='margin-top:11px' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-12'>
+                    <ul class='listgroup'>
+                        <li class="list-group-item hidden-xs listtitle">
+                            <div class='row'>
+                                <div class="col-sm-3"><b>Coin</b></div>
+                                <div class="col-sm-3"><b>Balance</b></div>
+                                <div class="col-sm-3"><b>Approx. Value (AUD)</b></div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs listtitle">
+                            <div class='row'>
+                                <div class="col-xs-2"><b>Coin</b></div>
+                                <div class="col-xs-6"><b>Balance</b></div>
+                                <div class="col-xs-4"><b>Approx. Value (AUD)</b></div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='PIVX' data-amount='0'>
+                            <div class='row walletrow' data-coin='pivx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/pivx.png?v=73" style='height:27px' /><br>PIVX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='PIVX' data-amount='0'>
+                            <div class='row walletrow' data-coin='pivx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/pivx.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; PIVX</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/pivx' class='btn btn-default btn-sm'>Open PIVX Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='btc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bitcoin.png?v=73" style='height:27px' /><br>BTC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='btc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bitcoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Bitcoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/btc' class='btn btn-default btn-sm'>Open Bitcoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ETH' data-amount='0'>
+                            <div class='row walletrow' data-coin='eth'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ethereum.png?v=73" style='height:27px' /><br>ETH
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ETH' data-amount='0'>
+                            <div class='row walletrow' data-coin='eth'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ethereum.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ethereum</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/eth' class='btn btn-default btn-sm'>Open Ethereum Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ETC' data-amount='0'>
+                            <div class='row walletrow' data-coin='etc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ethereum classic.png?v=73" style='height:27px' /><br>ETC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ETC' data-amount='0'>
+                            <div class='row walletrow' data-coin='etc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ethereum classic.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ethereum Classic</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/etc' class='btn btn-default btn-sm'>Open Ethereum Classic Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='HAV' data-amount='0'>
+                            <div class='row walletrow' data-coin='hav'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/havven.png?v=73" style='height:27px' /><br>HAV
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='HAV' data-amount='0'>
+                            <div class='row walletrow' data-coin='hav'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/havven.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Havven</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/hav' class='btn btn-default btn-sm'>Open Havven Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='PPT' data-amount='0'>
+                            <div class='row walletrow' data-coin='ppt'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/populous.png?v=73" style='height:27px' /><br>PPT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='PPT' data-amount='0'>
+                            <div class='row walletrow' data-coin='ppt'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/populous.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Populous</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ppt' class='btn btn-default btn-sm'>Open Populous Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XRB' data-amount='0'>
+                            <div class='row walletrow' data-coin='xrb'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/nano.png?v=73" style='height:27px' /><br>XRB
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XRB' data-amount='0'>
+                            <div class='row walletrow' data-coin='xrb'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/nano.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Nano (RaiBlocks)</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xrb' class='btn btn-default btn-sm'>Open Nano (RaiBlocks) Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='SUB' data-amount='0'>
+                            <div class='row walletrow' data-coin='sub'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/substratum.png?v=73" style='height:27px' /><br>SUB
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='SUB' data-amount='0'>
+                            <div class='row walletrow' data-coin='sub'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/substratum.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Substratum</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/sub' class='btn btn-default btn-sm'>Open Substratum Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XEM' data-amount='0'>
+                            <div class='row walletrow' data-coin='xem'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/nem.png?v=73" style='height:27px' /><br>XEM
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XEM' data-amount='0'>
+                            <div class='row walletrow' data-coin='xem'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/nem.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; NEM</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xem' class='btn btn-default btn-sm'>Open NEM Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='VTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='vtc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/vertcoin.png?v=73" style='height:27px' /><br>VTC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='VTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='vtc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/vertcoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Vertcoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/vtc' class='btn btn-default btn-sm'>Open Vertcoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='POWR' data-amount='0'>
+                            <div class='row walletrow' data-coin='powr'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/power ledger.png?v=73" style='height:27px' /><br>POWR
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='POWR' data-amount='0'>
+                            <div class='row walletrow' data-coin='powr'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/power ledger.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Power Ledger</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/powr' class='btn btn-default btn-sm'>Open Power Ledger Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ZEC' data-amount='0'>
+                            <div class='row walletrow' data-coin='zec'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/zcash.png?v=73" style='height:27px' /><br>ZEC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ZEC' data-amount='0'>
+                            <div class='row walletrow' data-coin='zec'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/zcash.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Zcash</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/zec' class='btn btn-default btn-sm'>Open Zcash Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='GBYTE' data-amount='0'>
+                            <div class='row walletrow' data-coin='gbyte'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/byteball bytes.png?v=73" style='height:27px' /><br>GBYTE
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='GBYTE' data-amount='0'>
+                            <div class='row walletrow' data-coin='gbyte'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/byteball bytes.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Byteball Bytes</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/gbyte' class='btn btn-default btn-sm'>Open Byteball Bytes Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DCR' data-amount='0'>
+                            <div class='row walletrow' data-coin='dcr'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/decred.png?v=73" style='height:27px' /><br>DCR
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DCR' data-amount='0'>
+                            <div class='row walletrow' data-coin='dcr'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/decred.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Decred</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/dcr' class='btn btn-default btn-sm'>Open Decred Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ADA' data-amount='0'>
+                            <div class='row walletrow' data-coin='ada'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/cardano.png?v=73" style='height:27px' /><br>ADA
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ADA' data-amount='0'>
+                            <div class='row walletrow' data-coin='ada'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/cardano.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Cardano</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ada' class='btn btn-default btn-sm'>Open Cardano Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ZRX' data-amount='0'>
+                            <div class='row walletrow' data-coin='zrx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/0x.png?v=73" style='height:27px' /><br>ZRX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ZRX' data-amount='0'>
+                            <div class='row walletrow' data-coin='zrx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/0x.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; 0x</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/zrx' class='btn btn-default btn-sm'>Open 0x Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BTS' data-amount='0'>
+                            <div class='row walletrow' data-coin='bts'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bitshares.png?v=73" style='height:27px' /><br>BTS
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BTS' data-amount='0'>
+                            <div class='row walletrow' data-coin='bts'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bitshares.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; BitShares</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/bts' class='btn btn-default btn-sm'>Open BitShares Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='WTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='wtc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/walton.png?v=73" style='height:27px' /><br>WTC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='WTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='wtc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/walton.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Walton</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/wtc' class='btn btn-default btn-sm'>Open Walton Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='RDN' data-amount='0'>
+                            <div class='row walletrow' data-coin='rdn'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/raiden network.png?v=73" style='height:27px' /><br>RDN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='RDN' data-amount='0'>
+                            <div class='row walletrow' data-coin='rdn'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/raiden network.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Raiden Network</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/rdn' class='btn btn-default btn-sm'>Open Raiden Network Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='GNT' data-amount='0'>
+                            <div class='row walletrow' data-coin='gnt'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/golem.png?v=73" style='height:27px' /><br>GNT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='GNT' data-amount='0'>
+                            <div class='row walletrow' data-coin='gnt'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/golem.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Golem</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/gnt' class='btn btn-default btn-sm'>Open Golem Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='GAS' data-amount='0'>
+                            <div class='row walletrow' data-coin='gas'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/gas.png?v=73" style='height:27px' /><br>GAS
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='GAS' data-amount='0'>
+                            <div class='row walletrow' data-coin='gas'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/gas.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; GAS</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/gas' class='btn btn-default btn-sm'>Open GAS Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BTG' data-amount='0'>
+                            <div class='row walletrow' data-coin='btg'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bitcoin gold.png?v=73" style='height:27px' /><br>BTG
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BTG' data-amount='0'>
+                            <div class='row walletrow' data-coin='btg'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bitcoin gold.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Bitcoin Gold</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/btg' class='btn btn-default btn-sm'>Open Bitcoin Gold Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ADX' data-amount='0'>
+                            <div class='row walletrow' data-coin='adx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/adex.png?v=73" style='height:27px' /><br>ADX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ADX' data-amount='0'>
+                            <div class='row walletrow' data-coin='adx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/adex.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; AdEx</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/adx' class='btn btn-default btn-sm'>Open AdEx Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='RISE' data-amount='0'>
+                            <div class='row walletrow' data-coin='rise'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/rise.png?v=73" style='height:27px' /><br>RISE
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='RISE' data-amount='0'>
+                            <div class='row walletrow' data-coin='rise'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/rise.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Rise</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/rise' class='btn btn-default btn-sm'>Open Rise Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='STR' data-amount='0'>
+                            <div class='row walletrow' data-coin='str'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/stellar.png?v=73" style='height:27px' /><br>STR
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='STR' data-amount='0'>
+                            <div class='row walletrow' data-coin='str'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/stellar.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Stellar</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/str' class='btn btn-default btn-sm'>Open Stellar Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='STEEM' data-amount='0'>
+                            <div class='row walletrow' data-coin='steem'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/steem.png?v=73" style='height:27px' /><br>STEEM
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='STEEM' data-amount='0'>
+                            <div class='row walletrow' data-coin='steem'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/steem.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Steem</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/steem' class='btn btn-default btn-sm'>Open Steem Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ENG' data-amount='0'>
+                            <div class='row walletrow' data-coin='eng'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/enigma.png?v=73" style='height:27px' /><br>ENG
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ENG' data-amount='0'>
+                            <div class='row walletrow' data-coin='eng'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/enigma.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Enigma</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/eng' class='btn btn-default btn-sm'>Open Enigma Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BCC' data-amount='0'>
+                            <div class='row walletrow' data-coin='bcc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bitcoin cash.png?v=73" style='height:27px' /><br>BCC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BCC' data-amount='0'>
+                            <div class='row walletrow' data-coin='bcc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bitcoin cash.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Bitcoin Cash</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/bcc' class='btn btn-default btn-sm'>Open Bitcoin Cash Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ETHOS' data-amount='0'>
+                            <div class='row walletrow' data-coin='bqx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bitquence.png?v=73" style='height:27px' /><br>ETHOS
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ETHOS' data-amount='0'>
+                            <div class='row walletrow' data-coin='bqx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bitquence.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ethos</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/bqx' class='btn btn-default btn-sm'>Open Ethos Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XZC' data-amount='0'>
+                            <div class='row walletrow' data-coin='xzc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/zcoin.png?v=73" style='height:27px' /><br>XZC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XZC' data-amount='0'>
+                            <div class='row walletrow' data-coin='xzc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/zcoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Zcoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xzc' class='btn btn-default btn-sm'>Open Zcoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='KMD' data-amount='0'>
+                            <div class='row walletrow' data-coin='kmd'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/komodo.png?v=73" style='height:27px' /><br>KMD
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='KMD' data-amount='0'>
+                            <div class='row walletrow' data-coin='kmd'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/komodo.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Komodo</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/kmd' class='btn btn-default btn-sm'>Open Komodo Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='CVC' data-amount='0'>
+                            <div class='row walletrow' data-coin='cvc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/civic.png?v=73" style='height:27px' /><br>CVC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='CVC' data-amount='0'>
+                            <div class='row walletrow' data-coin='cvc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/civic.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Civic</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/cvc' class='btn btn-default btn-sm'>Open Civic Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='KNC' data-amount='0'>
+                            <div class='row walletrow' data-coin='knc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/kyber.png?v=73" style='height:27px' /><br>KNC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='KNC' data-amount='0'>
+                            <div class='row walletrow' data-coin='knc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/kyber.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Kyber</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/knc' class='btn btn-default btn-sm'>Open Kyber Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='SALT' data-amount='0'>
+                            <div class='row walletrow' data-coin='salt'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/salt.png?v=73" style='height:27px' /><br>SALT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='SALT' data-amount='0'>
+                            <div class='row walletrow' data-coin='salt'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/salt.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Salt</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/salt' class='btn btn-default btn-sm'>Open Salt Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='MCO' data-amount='0'>
+                            <div class='row walletrow' data-coin='mco'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/monaco.png?v=73" style='height:27px' /><br>MCO
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='MCO' data-amount='0'>
+                            <div class='row walletrow' data-coin='mco'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/monaco.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Monaco</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/mco' class='btn btn-default btn-sm'>Open Monaco Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='QTUM' data-amount='0'>
+                            <div class='row walletrow' data-coin='qtum'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/qtum.png?v=73" style='height:27px' /><br>QTUM
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='QTUM' data-amount='0'>
+                            <div class='row walletrow' data-coin='qtum'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/qtum.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Qtum</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/qtum' class='btn btn-default btn-sm'>Open Qtum Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ARK' data-amount='0'>
+                            <div class='row walletrow' data-coin='ark'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ark.png?v=73" style='height:27px' /><br>ARK
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ARK' data-amount='0'>
+                            <div class='row walletrow' data-coin='ark'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ark.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ark</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ark' class='btn btn-default btn-sm'>Open Ark Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='GAME' data-amount='0'>
+                            <div class='row walletrow' data-coin='game'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/gamecredits.png?v=73" style='height:27px' /><br>GAME
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='GAME' data-amount='0'>
+                            <div class='row walletrow' data-coin='game'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/gamecredits.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; GameCredits</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/game' class='btn btn-default btn-sm'>Open GameCredits Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='FUN' data-amount='0'>
+                            <div class='row walletrow' data-coin='fun'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/funfair.png?v=73" style='height:27px' /><br>FUN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='FUN' data-amount='0'>
+                            <div class='row walletrow' data-coin='fun'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/funfair.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; FunFair</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/fun' class='btn btn-default btn-sm'>Open FunFair Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='SAFEX' data-amount='0'>
+                            <div class='row walletrow' data-coin='safex'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/safe exchange coin.png?v=73" style='height:27px' /><br>SAFEX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='SAFEX' data-amount='0'>
+                            <div class='row walletrow' data-coin='safex'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/safe exchange coin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Safe Exchange Coin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/safex' class='btn btn-default btn-sm'>Open Safe Exchange Coin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BAT' data-amount='0'>
+                            <div class='row walletrow' data-coin='bat'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/basic attention token.png?v=73" style='height:27px' /><br>BAT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BAT' data-amount='0'>
+                            <div class='row walletrow' data-coin='bat'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/basic attention token.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Basic Attention Token</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/bat' class='btn btn-default btn-sm'>Open Basic Attention Token Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='STRAT' data-amount='0'>
+                            <div class='row walletrow' data-coin='strat'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/stratis.png?v=73" style='height:27px' /><br>STRAT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='STRAT' data-amount='0'>
+                            <div class='row walletrow' data-coin='strat'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/stratis.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Stratis</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/strat' class='btn btn-default btn-sm'>Open Stratis Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XVG' data-amount='0'>
+                            <div class='row walletrow' data-coin='xvg'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/verge.png?v=73" style='height:27px' /><br>XVG
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XVG' data-amount='0'>
+                            <div class='row walletrow' data-coin='xvg'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/verge.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Verge</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xvg' class='btn btn-default btn-sm'>Open Verge Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='LTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='ltc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/litecoin.png?v=73" style='height:27px' /><br>LTC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='LTC' data-amount='0'>
+                            <div class='row walletrow' data-coin='ltc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/litecoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Litecoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ltc' class='btn btn-default btn-sm'>Open Litecoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='PAY' data-amount='0'>
+                            <div class='row walletrow' data-coin='pay'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/tenx.png?v=73" style='height:27px' /><br>PAY
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='PAY' data-amount='0'>
+                            <div class='row walletrow' data-coin='pay'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/tenx.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; TenX</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/pay' class='btn btn-default btn-sm'>Open TenX Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='RDD' data-amount='0'>
+                            <div class='row walletrow' data-coin='rdd'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/reddcoin.png?v=73" style='height:27px' /><br>RDD
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='RDD' data-amount='0'>
+                            <div class='row walletrow' data-coin='rdd'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/reddcoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Reddcoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/rdd' class='btn btn-default btn-sm'>Open Reddcoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='MTL' data-amount='0'>
+                            <div class='row walletrow' data-coin='mtl'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/metal.png?v=73" style='height:27px' /><br>MTL
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='MTL' data-amount='0'>
+                            <div class='row walletrow' data-coin='mtl'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/metal.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Metal</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/mtl' class='btn btn-default btn-sm'>Open Metal Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='OMG' data-amount='0'>
+                            <div class='row walletrow' data-coin='omg'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/omisego.png?v=73" style='height:27px' /><br>OMG
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='OMG' data-amount='0'>
+                            <div class='row walletrow' data-coin='omg'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/omisego.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; OmiseGO</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/omg' class='btn btn-default btn-sm'>Open OmiseGO Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='USDT' data-amount='0'>
+                            <div class='row walletrow' data-coin='usdt'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/tether usd.png?v=73" style='height:27px' /><br>USDT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='USDT' data-amount='0'>
+                            <div class='row walletrow' data-coin='usdt'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/tether usd.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Tether USD</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/usdt' class='btn btn-default btn-sm'>Open Tether USD Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='LBC' data-amount='0'>
+                            <div class='row walletrow' data-coin='lbc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/lbry credits.png?v=73" style='height:27px' /><br>LBC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='LBC' data-amount='0'>
+                            <div class='row walletrow' data-coin='lbc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/lbry credits.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; LBRY Credits</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/lbc' class='btn btn-default btn-sm'>Open LBRY Credits Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='SC' data-amount='0'>
+                            <div class='row walletrow' data-coin='sc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/siacoin.png?v=73" style='height:27px' /><br>SC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='SC' data-amount='0'>
+                            <div class='row walletrow' data-coin='sc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/siacoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Siacoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/sc' class='btn btn-default btn-sm'>Open Siacoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='EOS' data-amount='0'>
+                            <div class='row walletrow' data-coin='eos'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/eos.png?v=73" style='height:27px' /><br>EOS
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='EOS' data-amount='0'>
+                            <div class='row walletrow' data-coin='eos'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/eos.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; EOS</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/eos' class='btn btn-default btn-sm'>Open EOS Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='NXS' data-amount='0'>
+                            <div class='row walletrow' data-coin='nxs'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/nexus.png?v=73" style='height:27px' /><br>NXS
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='NXS' data-amount='0'>
+                            <div class='row walletrow' data-coin='nxs'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/nexus.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Nexus</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/nxs' class='btn btn-default btn-sm'>Open Nexus Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='WAVES' data-amount='0'>
+                            <div class='row walletrow' data-coin='waves'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/waves.png?v=73" style='height:27px' /><br>WAVES
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='WAVES' data-amount='0'>
+                            <div class='row walletrow' data-coin='waves'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/waves.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Waves</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/waves' class='btn btn-default btn-sm'>Open Waves Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ARDR' data-amount='0'>
+                            <div class='row walletrow' data-coin='ardr'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ardor.png?v=73" style='height:27px' /><br>ARDR
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ARDR' data-amount='0'>
+                            <div class='row walletrow' data-coin='ardr'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ardor.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ardor</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ardr' class='btn btn-default btn-sm'>Open Ardor Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='NEO' data-amount='0'>
+                            <div class='row walletrow' data-coin='ans'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/neo (antshares).png?v=73" style='height:27px' /><br>NEO
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='NEO' data-amount='0'>
+                            <div class='row walletrow' data-coin='ans'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/neo (antshares).png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Neo</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ans' class='btn btn-default btn-sm'>Open Neo Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='MIOTA' data-amount='0'>
+                            <div class='row walletrow' data-coin='miota'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/iota.png?v=73" style='height:27px' /><br>MIOTA
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='MIOTA' data-amount='0'>
+                            <div class='row walletrow' data-coin='miota'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/iota.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; IOTA</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/miota' class='btn btn-default btn-sm'>Open IOTA Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='LSK' data-amount='0'>
+                            <div class='row walletrow' data-coin='lsk'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/lisk.png?v=73" style='height:27px' /><br>LSK
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='LSK' data-amount='0'>
+                            <div class='row walletrow' data-coin='lsk'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/lisk.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Lisk</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/lsk' class='btn btn-default btn-sm'>Open Lisk Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='BCN' data-amount='0'>
+                            <div class='row walletrow' data-coin='bcn'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/bytecoin.png?v=73" style='height:27px' /><br>BCN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='BCN' data-amount='0'>
+                            <div class='row walletrow' data-coin='bcn'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/bytecoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Bytecoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/bcn' class='btn btn-default btn-sm'>Open Bytecoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DGB' data-amount='0'>
+                            <div class='row walletrow' data-coin='dgb'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/digibyte.png?v=73" style='height:27px' /><br>DGB
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DGB' data-amount='0'>
+                            <div class='row walletrow' data-coin='dgb'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/digibyte.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; DigiByte</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/dgb' class='btn btn-default btn-sm'>Open DigiByte Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DOGE' data-amount='0'>
+                            <div class='row walletrow' data-coin='doge'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/dogecoin.png?v=73" style='height:27px' /><br>DOGE
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DOGE' data-amount='0'>
+                            <div class='row walletrow' data-coin='doge'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/dogecoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Dogecoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/doge' class='btn btn-default btn-sm'>Open Dogecoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DASH' data-amount='0'>
+                            <div class='row walletrow' data-coin='dash'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/dash.png?v=73" style='height:27px' /><br>DASH
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DASH' data-amount='0'>
+                            <div class='row walletrow' data-coin='dash'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/dash.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Dash</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/dash' class='btn btn-default btn-sm'>Open Dash Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='PPC' data-amount='0'>
+                            <div class='row walletrow' data-coin='ppc'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/peercoin.png?v=73" style='height:27px' /><br>PPC
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='PPC' data-amount='0'>
+                            <div class='row walletrow' data-coin='ppc'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/peercoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Peercoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ppc' class='btn btn-default btn-sm'>Open Peercoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='MAID' data-amount='0'>
+                            <div class='row walletrow' data-coin='maid'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/maidsafecoin.png?v=73" style='height:27px' /><br>MAID
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='MAID' data-amount='0'>
+                            <div class='row walletrow' data-coin='maid'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/maidsafecoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; MaidSafeCoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/maid' class='btn btn-default btn-sm'>Open MaidSafeCoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='FCT' data-amount='0'>
+                            <div class='row walletrow' data-coin='fct'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/factom.png?v=73" style='height:27px' /><br>FCT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='FCT' data-amount='0'>
+                            <div class='row walletrow' data-coin='fct'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/factom.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Factom</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/fct' class='btn btn-default btn-sm'>Open Factom Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='NXT' data-amount='0'>
+                            <div class='row walletrow' data-coin='nxt'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/nxt.png?v=73" style='height:27px' /><br>NXT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='NXT' data-amount='0'>
+                            <div class='row walletrow' data-coin='nxt'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/nxt.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Nxt</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/nxt' class='btn btn-default btn-sm'>Open Nxt Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XRP' data-amount='0'>
+                            <div class='row walletrow' data-coin='xrp'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ripple.png?v=73" style='height:27px' /><br>XRP
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XRP' data-amount='0'>
+                            <div class='row walletrow' data-coin='xrp'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ripple.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Ripple</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xrp' class='btn btn-default btn-sm'>Open Ripple Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='XMR' data-amount='0'>
+                            <div class='row walletrow' data-coin='xmr'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/monero.png?v=73" style='height:27px' /><br>XMR
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='XMR' data-amount='0'>
+                            <div class='row walletrow' data-coin='xmr'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/monero.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Monero</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/xmr' class='btn btn-default btn-sm'>Open Monero Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='REP' data-amount='0'>
+                            <div class='row walletrow' data-coin='rep'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/augur.png?v=73" style='height:27px' /><br>REP
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='REP' data-amount='0'>
+                            <div class='row walletrow' data-coin='rep'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/augur.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Augur</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/rep' class='btn btn-default btn-sm'>Open Augur Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='QSP' data-amount='0'>
+                            <div class='row walletrow' data-coin='qsp'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/quantstamp.png?v=73" style='height:27px' /><br>QSP
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='QSP' data-amount='0'>
+                            <div class='row walletrow' data-coin='qsp'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/quantstamp.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Quantstamp</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/qsp' class='btn btn-default btn-sm'>Open Quantstamp Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='EMC2' data-amount='0'>
+                            <div class='row walletrow' data-coin='emc2'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/einsteinium.png?v=73" style='height:27px' /><br>EMC2
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='EMC2' data-amount='0'>
+                            <div class='row walletrow' data-coin='emc2'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/einsteinium.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Einsteinium</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/emc2' class='btn btn-default btn-sm'>Open Einsteinium Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='TRX' data-amount='0'>
+                            <div class='row walletrow' data-coin='trx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/tron.png?v=73" style='height:27px' /><br>TRX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='TRX' data-amount='0'>
+                            <div class='row walletrow' data-coin='trx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/tron.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; TRON</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/trx' class='btn btn-default btn-sm'>Open TRON Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ICX' data-amount='0'>
+                            <div class='row walletrow' data-coin='icx'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/icon.png?v=73" style='height:27px' /><br>ICX
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ICX' data-amount='0'>
+                            <div class='row walletrow' data-coin='icx'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/icon.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; ICON</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/icx' class='btn btn-default btn-sm'>Open ICON Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='POE' data-amount='0'>
+                            <div class='row walletrow' data-coin='poe'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/poet.png?v=73" style='height:27px' /><br>POE
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='POE' data-amount='0'>
+                            <div class='row walletrow' data-coin='poe'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/poet.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Po.et</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/poe' class='btn btn-default btn-sm'>Open Po.et Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='VEN' data-amount='0'>
+                            <div class='row walletrow' data-coin='ven'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/vechain.png?v=73" style='height:27px' /><br>VEN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='VEN' data-amount='0'>
+                            <div class='row walletrow' data-coin='ven'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/vechain.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; VeChain</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ven' class='btn btn-default btn-sm'>Open VeChain Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='OST' data-amount='0'>
+                            <div class='row walletrow' data-coin='ost'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/simple token.png?v=73" style='height:27px' /><br>OST
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='OST' data-amount='0'>
+                            <div class='row walletrow' data-coin='ost'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/simple token.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Simple Token</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ost' class='btn btn-default btn-sm'>Open Simple Token Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='HST' data-amount='0'>
+                            <div class='row walletrow' data-coin='hst'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/horizon state.png?v=73" style='height:27px' /><br>HST
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='HST' data-amount='0'>
+                            <div class='row walletrow' data-coin='hst'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/horizon state.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Horizon State</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/hst' class='btn btn-default btn-sm'>Open Horizon State Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DENT' data-amount='0'>
+                            <div class='row walletrow' data-coin='dent'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/dentcoin.png?v=73" style='height:27px' /><br>DENT
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DENT' data-amount='0'>
+                            <div class='row walletrow' data-coin='dent'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/dentcoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; DentCoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/dent' class='btn btn-default btn-sm'>Open DentCoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DRGN' data-amount='0'>
+                            <div class='row walletrow' data-coin='drgn'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/dragonchain.png?v=73" style='height:27px' /><br>DRGN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DRGN' data-amount='0'>
+                            <div class='row walletrow' data-coin='drgn'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/dragonchain.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Dragonchain</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/drgn' class='btn btn-default btn-sm'>Open Dragonchain Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='MOD' data-amount='0'>
+                            <div class='row walletrow' data-coin='mod'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/modum.png?v=73" style='height:27px' /><br>MOD
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='MOD' data-amount='0'>
+                            <div class='row walletrow' data-coin='mod'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/modum.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Modum</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/mod' class='btn btn-default btn-sm'>Open Modum Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='AE' data-amount='0'>
+                            <div class='row walletrow' data-coin='ae'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/aeternity.png?v=73" style='height:27px' /><br>AE
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='AE' data-amount='0'>
+                            <div class='row walletrow' data-coin='ae'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/aeternity.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Aeternity</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/ae' class='btn btn-default btn-sm'>Open Aeternity Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='CAN' data-amount='0'>
+                            <div class='row walletrow' data-coin='can'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/canyacoin.png?v=73" style='height:27px' /><br>CAN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='CAN' data-amount='0'>
+                            <div class='row walletrow' data-coin='can'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/canyacoin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; CanYaCoin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/can' class='btn btn-default btn-sm'>Open CanYaCoin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='DGD' data-amount='0'>
+                            <div class='row walletrow' data-coin='dgd'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/digixdao.png?v=73" style='height:27px' /><br>DGD
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='DGD' data-amount='0'>
+                            <div class='row walletrow' data-coin='dgd'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/digixdao.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; DigixDAO</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/dgd' class='btn btn-default btn-sm'>Open DigixDAO Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='LEND' data-amount='0'>
+                            <div class='row walletrow' data-coin='lend'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/ethlend.png?v=73" style='height:27px' /><br>LEND
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='LEND' data-amount='0'>
+                            <div class='row walletrow' data-coin='lend'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/ethlend.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; ETHLend</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/lend' class='btn btn-default btn-sm'>Open ETHLend Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ENJ' data-amount='0'>
+                            <div class='row walletrow' data-coin='enj'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/enjin coin.png?v=73" style='height:27px' /><br>ENJ
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ENJ' data-amount='0'>
+                            <div class='row walletrow' data-coin='enj'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/enjin coin.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Enjin Coin</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/enj' class='btn btn-default btn-sm'>Open Enjin Coin Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='AGI' data-amount='0'>
+                            <div class='row walletrow' data-coin='agi'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/singularitynet.png?v=73" style='height:27px' /><br>AGI
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='AGI' data-amount='0'>
+                            <div class='row walletrow' data-coin='agi'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/singularitynet.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; SingularityNET</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/agi' class='btn btn-default btn-sm'>Open SingularityNET Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item visible-xs walletitem" data-coindisplay='ETN' data-amount='0'>
+                            <div class='row walletrow' data-coin='etn'>
+                                <div class="col-xs-2">
+                                    <img src="/public/img/coinmd/electroneum.png?v=73" style='height:27px' /><br>ETN
+                                </div>
+                                <div class="col-xs-6" style='line-height:40px'>0</div>
+                                <div class="col-xs-4" style='line-height:40px'>$0</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item hidden-xs walletitem" data-coindisplay='ETN' data-amount='0'>
+                            <div class='row walletrow' data-coin='etn'>
+                                <div class="col-sm-3"><img src="/public/img/coinmd/electroneum.png?v=73" style='height:27px' />&nbsp;&nbsp;&nbsp; Electroneum</div>
+                                <div class="col-sm-3">0</div>
+                                <div class="col-sm-3">$0</div>
+                                <div class="col-sm-3">
+                                    <a href='/my/wallet/etn' class='btn btn-default btn-sm'>Open Electroneum Wallet</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <style>
+            .walletrow {
+                cursor: pointer
+            }
+
+            .page-content {
+                background: #fff;
+                padding: 0px;
+            }
+
+            .hidden {
+                display: none!important
+            }
+
+        </style>
+
+    </div>
+</div>
