@@ -8,13 +8,13 @@
  * Controller of the cryptoCentric
  */
 angular.module('cryptoCentric')
-    .controller('HomeCtrl', function ($scope, $http) {
+    .controller('OrderCtrl', function ($scope, $http, cons) {
 
         $http({
-            url: 'http://10.0.5.52:8081/api/exchange',
+            url: 'http://10.0.5.53:7001/DBOperations/rest/UserService/fetch/tradehistory?usr_key=100',
             method: "GET"
         }).then(function (response) {
-            $scope.coins = response.data;
+            $scope.orders = response.data;
         });
 
     });

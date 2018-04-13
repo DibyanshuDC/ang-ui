@@ -23,11 +23,13 @@
     <script src="controllers/multicoinwallets.js"></script>
     <script src="controllers/frgtPwd.js"></script>
     <script src="controllers/register.js"></script>
+    <script src="controllers/myorderhistory.js"></script>
 
 
 
 
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/cryptocentric.js"></script>
 </head>
 
@@ -41,31 +43,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style='color:#333' ng-href="#!/"><img src='img/cryptocentric-v-sml.png?v=71' alt='cryptocentric' style='height:32px;width:32px' /> cryptocentric</a>
+                <a class="navbar-brand" style='color:#fff' ng-href="#!/"><img src='img/cryptocentric-v-sml.png?v=71' alt='cryptocentric' style='height:32px;width:32px' /> cryptocentric.io</a>
             </div>
-            <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-                <ul class="nav navbar-nav navbar-right" style='margin-top:5px'>
-                    <li><a style='font-size:14px;color:#333;letter-spacing:1.1px' ng-href="#!/">Home</a></li>
-
-                    <li><a style='font-size:14px;color:#333;letter-spacing:1.1px' ng-href="#!multicoinwallets">Wallets</a></li>
-                    <li><a style='font-size:14px;color:#333;letter-spacing:1.1px' ng-href='#!tradecoins'>Buy/Sell</a></li>
-                    <li>
-                        <a ng-href="#!/trade/bitcoin" style='cursor:pointer;font-size:14px;color:#333;letter-spacing:1.1px' class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Markets <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ng-href="#!trade-btc">BTC/AUD</a></li>
-                            <li><a ng-href="#!trade-ltc">LTC/AUD</a></li>
-                            <li><a ng-href="#!trade-doge">DOGE/AUD</a></li>
-                        </ul>
-                    </li>
-                    <li><a style='font-size:14px;color:#333;letter-spacing:1.1px' ng-href='#!register'>Register</a></li>
-                    <li><a style='font-size:14px;color:#333;letter-spacing:1.1px' ng-href='#!login'>Login</a></li>
-                </ul>
-            </nav>
+            <ul class="nav nav-tabs navbar-right ">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#transact">Transact</a></li>
+                <li><a data-toggle="tab" href="#markets">Markets</a></li>
+                <li><a ng-href='#!login'>Login</a></li>
+            </ul>
+            <div class="clearfix"></div>
         </div>
     </header>
 
+    <div id="submenu">
+        <div class="container">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active"></div>
+                <div id="transact" class="tab-pane fade">
+                    <ul class="nav nav-pills">
+                        <li><a href="">MenuOne</a></li>
+                        <li><a href="">MenuTwo</a></li>
+                        <li><a href="">MenuThree</a></li>
+                        <li><a href="">MenuFour</a></li>
+                    </ul>
+                </div>
+                <div id="markets" class="tab-pane fade">
+                    <ul class="nav nav-pills">
+                        <li><a href="">MenuOne</a></li>
+                        <li><a href="">MenuTwo</a></li>
+                        <li><a href="">MenuThree</a></li>
+                        <li><a href="">MenuFour</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div ng-view="">
     </div>
+
+
 
 
     <div class='footerconainer'>

@@ -96,7 +96,11 @@ angular.module('cryptoCentric')
         //          })
         //        })
 
+        var script = document.createElement("script");
+        script.setAttribute("src", "https://www.google.com/recaptcha/api.js");
 
+        var el = document.getElementsByTagName("createaccountrow")[0];
+        el.appendChild(script);
 
 
 

@@ -213,14 +213,14 @@
                                 </div>
                                 <div class='col-md-3'>
                                     <div class='form-group'>
-                                        How much AUD? <small>(includes fee)</small>
-                                        <input style='font-size:23px;height:45px' type='number' autocomplete='off' class="buy buyinput form-control" ng-model="tradeAmount" ng-change="tradeAmountChange()"  id="audbuyamount" required tabindex="2">
+                                        How much AUD? <small>(excludes fee)</small>
+                                        <input style='font-size:23px;height:45px' type='number' autocomplete='off' class="buy buyinput form-control" ng-model="tradeAmount" ng-change="tradeAmountChange()" id="audbuyamount" required tabindex="2">
                                     </div>
                                 </div>
                                 <div class='col-md-8 col-md-offset-2'>
                                     <br>
                                     <span class="cancelbtcbtn btn btn-default btn-sm">Cancel</span>
-                                    <button class="btcbtn pull-right btn btn-lg btn-primary text-capital" tabindex="3">{{action}}</button>
+                                    <button class="btcbtn pull-right btn btn-lg btn-primary text-capital" tabindex="3" data-toggle="modal" data-target="#confirm">{{action}}</button>
                                 </div>
                             </div>
                             <div class="container-fluid " style="background:#94DFF6;margin-top:100px;padding:50px;color:#111">
@@ -263,20 +263,77 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="confirmBuy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+
+
+
+        <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Buy Bitcoin</h4>
+                        <h4 class="modal-title" id="myModalLabel"><span class="text-capital">{{action}}</span> {{coin.name}}</h4>
                     </div>
                     <div class="modal-body">
-                        Start buying {{coin.name}} by registering for a free cryptocentric account.
+                        <p class='small'>
+                            Please check and confirm your order details below.
+                        </p>
+                        <br>
+                        <p>
+                            <b>Amount</b><br>
+                            <span class='confirmamount'>{{coinAmount}}</span> {{coin.symbol}}
+                        </p>
+                        <p>
+                            <b>Price per {{coin.symbol}}</b><br> $
+                            <span class='confirmrate'>{{coin.price}}</span> {{coin.symbol}}
+                        </p>
+                        <p>
+                            <b>Fee <span class='feepercent'>{{feepercent}} %</span></b><br> $
+                            <span class='fee'>{{coinAmount*coin.price*feepercent/100}}</span> {{coin.symbol}}
+                        </p>
+                        <p>
+                            <br>
+                            <b>Total price</b><br> $
+                            <span class='confirmprice'>{{coinAmount*coin.price + (coinAmount*coin.price*feepercent/100)}}</span> {{coin.symbol}}
+                        </p>
+
+                        <p style='display:none'>
+                            <b>Payment type</b> <br>
+                            <div class='small' style='margin-top:-10px;margin-bottom: 10px'>
+                            </div>
+                            <div class='row' style='display:none'>
+                                <div class='col-xs-6'>
+                                    <input type='radio' name='paymenttype' value='poli' checked />&nbsp;POLi Payments
+                                </div>
+                                <br>
+                            </div>
+                        </p>
+                        <div class="alert withdrawals alert-warning" style='margin-top: 10px; margin-bottom: 0; display:none;'>
+                            <strong>Warning: </strong>If you continue with this purchase, your AUD withdrawal(s) may be canceled.
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <a href='/register.html' type="button" class="btn btn-primary">Register an account</a>
+                        <button type="button" class="pull-left cancel btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="buybtn btn btn-primary confirmbuy" ng-click="confirmTrans()">Confirm <span class="text-capital">{{action}}</span></button>
                     </div>
+
+
+
+
+
+
+
+
+
+
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a href='/register.html' type="button" class="btn btn-primary">Register an account</a>
+                                </div>
+-->
                 </div>
             </div>
         </div>

@@ -1,0 +1,73 @@
+<div class='page-content' id="myorders">
+    <div class='container' style='padding-top:10px;padding-bottom:50px'>
+        <br>
+        <h2><strong>My Orders</strong></h2>
+
+        <br>
+        <h4><strong class="text-primary">Today's Orders</strong></h4>
+
+        <table class="table responstable todays_order ">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Market</th>
+                    <th>Quantity</th>
+                    <th>Price/Share</th>
+                    <th>Fee</th>
+                    <th>Total</th>
+                    <th>Invoice</th>
+                </tr>
+            </thead>
+            <!--Items from the databse list of products-->
+            <tbody ng-repeat="item in orders  | orderBy : '-trade_date'" class="repeat-animation ">
+                <tr>
+                    <td data-th="Date">{{item.trade_date}}</td>
+                    <td data-th="Type">
+                        <div class="constrained">{{item.type}}</div>
+                    </td>
+                    <td data-th="Market">{{item.coinname}}</td>
+                    <td data-th="Amount">{{item.coins_vol}}</td>
+                    <td data-th="Price/Share">{{item.coin_value}}</td>
+                    <td data-th="Fee">{{item.txn_fee}}</td>
+                    <td data-th="Total">{{item.total}}</td>
+                    <td data-th="Invoice"><a class="btn btn-small disabled">Open</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <br>
+        <h4><strong class="text-muted">Previous Orders</strong></h4>
+
+        <table class="table responstable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Market</th>
+                    <th>Quantity</th>
+                    <th>Price/Share</th>
+                    <th>Fee</th>
+                    <th>Total</th>
+                    <th>Invoice</th>
+                </tr>
+            </thead>
+            <!--Items from the databse list of products-->
+            <tbody ng-repeat="item in orders" class="repeat-animation">
+                <tr>
+                    <td data-th="Date">{{item.trade_date}}</td>
+                    <td data-th="Type">
+                        <div class="constrained">{{item.type}}</div>
+                    </td>
+                    <td data-th="Market">{{item.coinname}}</td>
+                    <td data-th="Amount">{{item.coins_vol}}</td>
+                    <td data-th="Price/Share">{{item.coin_value}}</td>
+                    <td data-th="Fee">{{item.txn_fee}}</td>
+                    <td data-th="Total">{{item.total}}</td>
+                    <td data-th="Invoice"><a class="btn btn-small disabled">Open</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

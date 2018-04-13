@@ -3,8 +3,8 @@
         <img src="img/cryptocentric-v-sml.png" style="height: 240px">
     </div>
     <div class="col-md-5 visible-md visible-lg" style="padding-left: 30px">
-        <h1>cryptocentric.</h1>
-        <h2>Buy Bitcoin, Ethereum and more with Instant Delivery and easy verification.</h2>
+        <h1>cryptocentric.io</h1>
+        <h2>Australia's Digital Assets Exchange.</h2>
     </div>
     <div class="col-md-12 visible-xs" align="center">
         <h2 style='margin-left:10px;margin-right:10px'>Buy Bitcoin, Ethereum and more.</h2>
@@ -16,85 +16,80 @@
 </div>
 <div class='prices'>
     <div class='container'>
-        <div class='row'>
-            <div class='col-sm-3 col-xs-6 text-center' style='cursor:pointer' onclick='location.href="/buy-btc.html"'>
-                <img src='img/bitcoin.png' />
-                <h2>BTC</h2>
-            </div>
-            <div class='col-sm-3 col-xs-6 text-center' style='cursor:pointer' onclick='location.href="/buy/dash"'>
-                <img src='img/dash.png' />
-                <h2>DASH</h2>
-            </div>
-            <div class='col-sm-3 col-xs-6 text-center' style='cursor:pointer' onclick='location.href="/buy/eth"'>
-                <img src='img/ethereum.png' />
-                <h2>ETH</h2>
-            </div>
-            <div class='col-sm-3 col-xs-6 text-center' style='cursor:pointer' onclick='location.href="/buy/ltc"'>
-                <img src='img/litecoin.png' />
-                <h2>LTC</h2>
-            </div>
-            <div class='col-md-12 text-center'>
-                <a ng-href='#!tradecoins' class='btn btn-default'>View All Coins</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class='anywhere'>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-md-12 text-center'>
-                <h2>Buy anywhere, on any device, anytime.</h2>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <ul class="anywheredevices">
-                            <li class="" data-t='desktop'><span class="phone">Phone</span></li>
-                            <li class="" data-t='desktop'><span class="tablet">Tablet</span></li>
-                            <li class="current" data-t='desktop'><span class="desktop">Desktop</span></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-12 devices">
-                        <div class='device phone'>
-                            <img src='img/iphone.png' />
-                        </div>
-                        <div class='device tablet'>
-                            <img src='img/ipad.png' style='width:100%;max-width:460px' />
-                        </div>
-                        <div class='device desktop'>
-                            <img src='img/macbook.png' style='width:100%;max-width:920px' />
-                        </div>
+        <div class='col-md-12' style='margin-top:20px'>
+            <h3 class="text-center">Indicative Prices. For actual data Please log in now.</h3>
+            <div class='row'>
+                <div class='col-md-3 col-xs-6'>
+                    <div class='form-group form-inline'>
+                        <input type='text' class='form-control filtercoins' ng-model="filtercoins" placeholder="Filter list" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class='sellingpoints' style='margin-left:20px;margin-right:20px'>
-    <div class='container' style='width:100%;'>
-        <div class='row' style='width:100%'>
-            <div class='col-md-4 text-center'>
-                <img src='img/security.png' />
-                <h2>Security</h2>
-                <p>cryptocentric operates in a stable regulatory environment with bank level security.</p>
-            </div>
-            <div class='col-md-4 text-center'>
-                <img src='img/aud.png' />
-                <h2>AUD Trading</h2>
-                <p>Remove the risk associated with foreign exchanges and buy directly with AUD</p>
-            </div>
-            <div class='col-md-4 text-center'>
-                <img src='img/wallet.png' />
-                <h2>Multicoin Wallet</h2>
-                <p>cryptocentric multicoin wallets have no monthly cost and low transaction fees.</p>
-            </div>
+        <div class='col-md-12'>
+            <ul class='listgroup'>
+                <li class="list-group-item hidden-xs hidden-sm listtitle">
+                    <div class='row'>
+                        <div class="col-sm-2"><b>Coin</b></div>
+                        <div class="col-sm-2"><b>Buy Rate</b></div>
+                        <div class="col-sm-2"><b>Sell Rate</b></div>
+                        <div class="col-sm-2"><b>Market Cap</b></div>
+                        <div class="col-sm-1"><b>Change</b><small> (24hrs)</small></div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </li>
+                <li class="list-group-item visible-xs visible-sm listtitle">
+                    <div class='row'>
+                        <div class="col-xs-3"><b>Coin</b></div>
+                        <div class="col-xs-3"><b>Buy</b></div>
+                        <div class="col-xs-3"><b>Sell</b></div>
+                        <div class="col-xs-3"><b>Change</b></div>
+                    </div>
+                </li>
+                <span ng-repeat="coin in coins | filter: filtercoins |orderBy : 'rank'">
+                        <li class="hidden-xs hidden-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
+                            <div ng-href="#!/do/buy/{{coin.symbol}}" class='row marketrow'>
+                                <div class="col-sm-2"><img src='img/{{coin.name}}.png' style='height:37px' />{{coin.name}}</div>
+                                <div class="col-sm-2">${{coin.price}}</div>
+                                <div class="col-sm-2">${{coin.price }}</div>
+                                <div class="col-sm-2">${{coin.marketCap}}</div>
+                                <div class="col-sm-1"><span ng-class="coin.percentageChange < 0 ? 'movedown' : 'moveup'">{{coin.percentageChange}}%</span></div>
+        <div class="col-sm-3">
+            <a ng-href="#!/do/buy/{{coin.id}}" class='btn btn-default btn-sm'>Buy {{coin.symbol}}</a>&nbsp;&nbsp;
+            <a ng-href="#!/do/sell/{{coin.id}}" class='btn btn-default btn-sm'>Sell {{coin.symbol}}</a>
         </div>
     </div>
+    </li>
+    <li class="visible-xs visible-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
+        <div class='row'>
+            <div class="col-xs-3" style='line-height:40px'><img src='img/{{coin.name}}.png' style='height:27px' /></div>
+            <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
+            <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
+            <div class="col-xs-3" style='line-height:40px'><span ng-class="coin.percentageChange < 0 ? 'movedown' : 'moveup'">{{coin.percentageChange}}%</span></div>
+            <div class='col-xs-3'>
+                BTC
+            </div>
+            <div class='col-xs-9'>
+                <div>
+                    <!--
+                    <a ng-href="#!/do/buy/{{coin.id}}" class='btn btn-default btn-sm'> Buy </a>&nbsp;
+                    <a ng-href='#!/do/sell/{{coin.id}}' class='btn btn-default btn-sm'> Sell </a>&nbsp;
+-->
+                    <a ng-href='#!login' class='btn btn-default btn-sm'> Buy </a>&nbsp;
+                    <a ng-href='#!login' class='btn btn-default btn-sm'> Sell </a>&nbsp;
+                </div>
+            </div>
+        </div>
+    </li>
+    </span>
+    </ul>
 </div>
-<div class='start-trading'>
+</div>
+</div>
+<div class='sellingpoints' style='margin-left:20px;margin-right:20px'>
     <div class='container'>
         <div class='row'>
-            <div class='col-md-12 text-center'>
-                <a class='btn btn-lg btn-primary' ng-href='#!register'>Start Trading Today &raquo;</a>
-            </div>
+            <p style="font-size: 12px; font-weight: bold; width: 60%; margin: 0 auto"> Disclaimer : Trading in bitcoins and cryptocurrencies is subject to market, technical and legal risks. Prices in Austrailia vary from international prices due to local demand and supply. Cryptocentric does not guarantee any returns. Users use Zebpay at their own risk.</p>
         </div>
     </div>
 </div>
