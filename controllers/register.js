@@ -8,7 +8,7 @@
  * Controller of the cryptoCentric
  */
 angular.module('cryptoCentric')
-    .controller('RegCtrl', function ($scope, $http, $window) {
+    .controller('RegCtrl', function ($scope, $http, $window, cons) {
 
 
 
@@ -47,14 +47,14 @@ angular.module('cryptoCentric')
                     "urn:ietf:params:scim:schemas:extension:oracle:2.0:OIG:User": {
                         "homeOrganization": {
                             "value": "4",
-                            "$ref": "http://10.0.5.53:14000/idaas/im/scim/v1/Organizations/4"
+                            "$ref": cons.bs.im + "idaas/im/scim/v1/Organizations/4"
                         }
                     }
 
                 };
 
                 $http({
-                        url: 'http://10.0.5.53:14000/idaas/im/scim/v1/Users',
+                        url: cons.bs.im + 'idaas/im/scim/v1/Users',
                         method: "POST",
                         data: userData,
                         headers: {

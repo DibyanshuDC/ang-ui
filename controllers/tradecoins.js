@@ -8,14 +8,14 @@
  * Controller of the cryptoCentric
  */
 angular.module('cryptoCentric')
-    .controller('TradeCoinsCtrl', function ($scope, $http) {
+    .controller('TradeCoinsCtrl', function ($scope, $http, cons) {
 
         $http({
-                url: 'http://10.0.5.52:8081/api/exchange',
-                method: "GET"
-            }).then(function (response) {
-                $scope.coins = response.data;
-            });
+            url: cons.bs.m + 'exchange',
+            method: "GET"
+        }).then(function (response) {
+            $scope.coins = response.data;
+        });
 
     });
 

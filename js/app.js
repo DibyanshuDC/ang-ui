@@ -1,13 +1,13 @@
 var app = angular.module("cryptoCentric", ["ngRoute"])
     .constant('cons', {
         bs: {
-            o: 'http://10.0.5.53/',
-            m: 'http://10.0.5.52/'
+            o: 'http://10.0.5.53:7001/',
+            m: 'http://10.0.5.52:8081/api/',
+            im: 'http://10.0.5.53:14000/'
         },
     })
     .config(function ($routeProvider, $locationProvider, $sceDelegateProvider, cons) {
 
-        console.log(cons);
         $sceDelegateProvider.resourceUrlWhitelist([
           // Allow same origin resource loads.
           'self',

@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class='col-md-12'>
+        <div ng-show="coins" class='col-md-12'>
             <ul class='listgroup'>
                 <li class="list-group-item hidden-xs hidden-sm listtitle">
                     <div class='row'>
@@ -43,13 +43,13 @@
                         <div class="col-xs-3"><b>Coin</b></div>
                         <div class="col-xs-3"><b>Buy</b></div>
                         <div class="col-xs-3"><b>Sell</b></div>
-                        <div class="col-xs-3"><b>Change</b></div>
+                        <div class="col-xs-3"><b>24 hrs</b></div>
                     </div>
                 </li>
                 <span ng-repeat="coin in coins | filter: filtercoins |orderBy : 'rank'">
                         <li class="hidden-xs hidden-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
                             <div ng-href="#!/do/buy/{{coin.symbol}}" class='row marketrow'>
-                                <div class="col-sm-2"><img src='img/{{coin.name}}.png' style='height:37px' />{{coin.name}}</div>
+                                <div class="col-sm-2"><img ng-src='img/{{coin.name}}.png' style='height:37px' />{{coin.name}}</div>
                                 <div class="col-sm-2">${{coin.price}}</div>
                                 <div class="col-sm-2">${{coin.price }}</div>
                                 <div class="col-sm-2">${{coin.marketCap}}</div>
@@ -62,7 +62,7 @@
     </li>
     <li class="visible-xs visible-sm list-group-item tradeitem" data-coin='{{coin.symbol}}' data-coindisplay='{{coin.symbol}}'>
         <div class='row'>
-            <div class="col-xs-3" style='line-height:40px'><img src='img/{{coin.name}}.png' style='height:27px' /></div>
+            <div class="col-xs-3" style='line-height:40px'><img ng-src='img/{{coin.name}}.png' style='height:27px' /></div>
             <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
             <div class="col-xs-3" style='line-height:40px'>${{coin.price}}</div>
             <div class="col-xs-3" style='line-height:40px'><span ng-class="coin.percentageChange < 0 ? 'movedown' : 'moveup'">{{coin.percentageChange}}%</span></div>

@@ -8,7 +8,7 @@
  * Controller of the cryptoCentric
  */
 angular.module('cryptoCentric')
-    .controller('BuySellCtrl', function ($scope, $http, $routeParams, $window) {
+    .controller('BuySellCtrl', function ($scope, $http, $routeParams, $window, cons) {
 
 
         $scope.coinAmount = 0;
@@ -22,7 +22,7 @@ angular.module('cryptoCentric')
             $scope.altAction = "Buy";
         }
         $http({
-            url: 'http://10.0.5.52:8081/api/exchange',
+            url: cons.bs.m + 'exchange',
             method: "GET"
         }).then(function (response) {
             $scope.coin = response.data;
@@ -60,7 +60,7 @@ angular.module('cryptoCentric')
 
 
                 $http({
-                        url: 'http://10.0.5.53:7001/DBOperations/rest/UserService/insert/buytrade',
+                        url: cons.bs.o + 'DBOperations/rest/UserService/insert/buytrade',
                         method: "POST",
                         data: tradeData,
                         headers: {
@@ -70,11 +70,11 @@ angular.module('cryptoCentric')
                     .then(function (response) {
                             // success
 
-                            var tUrl = "http://10.0.5.52:8081/api/" +
+                            var tUrl = cons.bs.m +
                                 $scope.action + "Order";
                             console.log(response.data);
                             $http({
-                                    url: "http://10.0.5.52:8081/api/buyOrder",
+                                    url: tUrl,
                                     method: "POST",
                                     data: {
                                         "transactionID": response.data.txnid,

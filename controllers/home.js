@@ -8,10 +8,10 @@
  * Controller of the cryptoCentric
  */
 angular.module('cryptoCentric')
-    .controller('HomeCtrl', function ($scope, $http) {
+    .controller('HomeCtrl', function ($scope, $http, cons) {
 
         $http({
-            url: 'http://10.0.5.52:8081/api/exchange',
+            url: cons.bs.m + 'exchange',
             method: "GET"
         }).then(function (response) {
             $scope.coins = response.data;
