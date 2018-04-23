@@ -16,24 +16,26 @@
                 <div class='col-md-6'>
                     <div class="panel">
                         <div class="panel-body">
-                            <form class='loginform' role="form" action='/login.html' method='POST'>
-                                <input type='hidden' name='_csrf' value='8b8zntCk-iweGTv_QrJfUlW-zP2vMZRG3MpU' />
+                            <form class='loginform' role="form">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type='text' class="form-control login" name="login" autocomplete='on'>
+                                    <input type='text' class="form-control login" ng-model="email" autocomplete='on'>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" name="password" autocomplete="off">
+                                    <input type="password" class="form-control" ng-model="password" autocomplete="off">
                                 </div>
+
+                                <!--
                                 <script src='https://www.google.com/recaptcha/api.js'></script>
                                 <div class="g-recaptcha" data-sitekey="6Lew1FAUAAAAAPz0ioB87uPS6ELi86kxQbU_JdFb"></div>
+-->
                                 <div class="checkbox">
                                     <label>
                                         <input class='remember' type="checkbox"> Remember my email
-                                        </label>
+                                    </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-primary" ng-click="login()">Login</button>
                                 <br><br>
                                 <a style='padding-top:15px' href='#!forgotpassword'>Forgot your password?</a> Don't have an account? <a href='#!register'>Register</a>
                             </form>

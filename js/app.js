@@ -3,7 +3,8 @@ var app = angular.module("cryptoCentric", ["ngRoute"])
         bs: {
             o: 'http://10.0.5.53:7001/',
             m: 'http://10.0.5.52:8081/api/',
-            im: 'http://10.0.5.53:14000/'
+            im: 'http://10.0.5.53:14000/',
+            am: 'http://10.0.5.53:8888/'
         },
     })
     .config(function ($routeProvider, $locationProvider, $sceDelegateProvider, cons) {
@@ -15,6 +16,8 @@ var app = angular.module("cryptoCentric", ["ngRoute"])
           'http://10.0.5.52/**',
           'http://10.0.5.53/**'
         ]);
+
+        //$locationProvider.hashPrefix('');
 
         $routeProvider.
         when("/", {
@@ -81,6 +84,16 @@ var app = angular.module("cryptoCentric", ["ngRoute"])
         when("/myorders", {
             templateUrl: "views/orders.html",
             controller: "OrderCtrl",
+            activePage: 'default'
+        }).
+        when("/kyc", {
+            templateUrl: "views/kyc.html",
+            controller: "KYCCtrl",
+            activePage: 'default'
+        }).
+        when("/camera", {
+            templateUrl: "views/camera.html",
+            controller: "CamCtrl",
             activePage: 'default'
         }).
         otherwise({

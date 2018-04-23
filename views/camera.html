@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row flex">
+        <div class="col-md-6 flexed">
+            <h3>Snap Shot</h3>
+            <div style="padding: 10px 0">
+                <canvas id="canvas" width="320" height="240" style="background-color:black;"></canvas>
+            </div>
+            <div>
+                <a class="btn btn-primary">Upload this Snapshot</a>
+                <!--<input type="file" accept="image/*">-->
+            </div>
+        </div>
+        <div class="col-md-6 flexed">
+            <h3 class="no-margin-ver">Camera View</h3>
+            <div class="profile-img">
+                <video id="video" width="320" height="240" autoplay></video>
+                <div>
+                    <a class="btn btn-primary" ng-click="snapshot()">Take a Snapshot</a>
+                    <!--<input type="file" accept="image/*">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .flex {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .flexed {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .no-margin-ver {
+        margin-bottom: 0;
+    }
+
+</style>
